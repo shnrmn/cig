@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "AppDelegate.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -44,6 +45,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    self.view.backgroundColor = delegate.brandWhite;
+    _timerView = [TimerViewController getInstance];
+    
     [self configureView];
 }
 

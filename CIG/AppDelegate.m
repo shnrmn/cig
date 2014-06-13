@@ -7,19 +7,41 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
-    }
+    _brandRed = [UIColor colorWithRed:239.0/255.0 green:65.0/255.0 blue:53.0/255.0 alpha:1.0];
+    _brandBlack = [UIColor colorWithRed:38.0/255.0 green:35.0/255.0 blue:36.0/255.0 alpha:1.0];
+    _brandWhite = [UIColor colorWithRed:239.0/255.0 green:233.0/255.0 blue:229.0/255.0 alpha:1.0];
+    
+    // Navigation bar appearance (background and title)
+    [[UINavigationBar appearance] setBarTintColor:_brandRed];
+    
+    // Navigation bar buttons appearance
+    [[UIBarButtonItem appearance] setTintColor:_brandWhite];
+    
+    [Parse setApplicationId:@"XTZO0ccMXVwnoXHjwYu97Sa2VadIGwcYYAU41ivF"
+    clientKey:@"uoYx4URUucwRHo3sjmGsb2KzkguCvVhlHfDkZ7zs"];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+    
+    UIViewController* detail1 = [splitViewController.viewControllers objectAtIndex:1];
+    UIViewController* detail2 = [splitViewController.storyboard instantiateViewControllerWithIdentifier:@"Suggestions Root"];
+    UIViewController* detail3 = [splitViewController.storyboard instantiateViewControllerWithIdentifier:@"Judging Root"];
+    UIViewController* detail4 = [splitViewController.storyboard instantiateViewControllerWithIdentifier:@"Notes Root"];
+    
+    self.masterDetailManager = [[MainViewController alloc] initWithSplitViewController:splitViewController
+                                                                        withDetailRootControllers:[NSArray arrayWithObjects:detail1,detail2,detail3,detail4,nil]];
+    
     return YES;
 }
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

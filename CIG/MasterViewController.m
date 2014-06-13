@@ -7,8 +7,8 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "AppDelegate.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -30,6 +30,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
+                                                                           fontWithName:@"Franchise-Regular" size:21], NSFontAttributeName,
+                                delegate.brandBlack, NSForegroundColorAttributeName, nil];
+    //[[[self.navigationController.navigationBar set] setTitleTextAttributes:attributes];
+    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
+    
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];

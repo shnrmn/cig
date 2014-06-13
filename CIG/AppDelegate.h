@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) MainViewController *masterDetailManager;
+@property (strong, nonatomic) UIColor *brandRed;
+@property (strong, nonatomic) UIColor *brandBlack;
+@property (strong, nonatomic) UIColor *brandWhite;
 
 @end
