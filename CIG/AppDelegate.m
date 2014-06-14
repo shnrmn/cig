@@ -29,14 +29,18 @@
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+    
+    //UISplitViewController *splitViewController = [[MasterDetailViewController alloc] init];
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     
+    //UIViewController* detail1 = [storyboard instantiateViewControllerWithIdentifier:@"Training Root"];
     UIViewController* detail1 = [splitViewController.viewControllers objectAtIndex:1];
-    UIViewController* detail2 = [splitViewController.storyboard instantiateViewControllerWithIdentifier:@"Suggestions Root"];
-    UIViewController* detail3 = [splitViewController.storyboard instantiateViewControllerWithIdentifier:@"Judging Root"];
-    UIViewController* detail4 = [splitViewController.storyboard instantiateViewControllerWithIdentifier:@"Notes Root"];
+    UIViewController* detail2 = [storyboard instantiateViewControllerWithIdentifier:@"Suggestions Root"];
+    UIViewController* detail3 = [storyboard instantiateViewControllerWithIdentifier:@"Judging Root"];
+    UIViewController* detail4 = [storyboard instantiateViewControllerWithIdentifier:@"Notes Root"];
     
-    self.masterDetailManager = [[MainViewController alloc] initWithSplitViewController:splitViewController
+    self.masterDetailManager = [[MasterDetailViewController alloc] initWithSplitViewController:splitViewController
                                                                         withDetailRootControllers:[NSArray arrayWithObjects:detail1,detail2,detail3,detail4,nil]];
     
     return YES;
