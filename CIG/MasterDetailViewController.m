@@ -20,6 +20,7 @@
     _timerView = [storyboard instantiateViewControllerWithIdentifier:@"Timer View"];
     _timerView.view.frame = CGRectMake(0, 852, 720, 134);
     _timerView.view.translatesAutoresizingMaskIntoConstraints = NO;
+    self.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:_timerView.view];
     [self updateViewConstraints];
 }
@@ -41,7 +42,7 @@
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeTrailing
                                                          multiplier:1.0
-                                                           constant:25.0]];
+                                                           constant:30.0]];
     
 //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_timerView.view
 //                                                          attribute:NSLayoutAttributeHeight

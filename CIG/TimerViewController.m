@@ -68,6 +68,7 @@ static TimerViewController *singleTimerView;
 
 - (IBAction)start:(id)sender
 {
+    if(!_timer.isValid)
     _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
 }
 
