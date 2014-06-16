@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 
 @interface MasterViewController () {
-    NSMutableArray *_objects;
+    
 }
 @end
 
@@ -32,15 +32,11 @@
 	// Do any additional setup after loading the view, typically from a nib.
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
-                                                                           fontWithName:@"Franchise-Regular" size:21], NSFontAttributeName,
+                                                                           fontWithName:@"Franchise" size:30], NSFontAttributeName,
                                 delegate.brandBlack, NSForegroundColorAttributeName, nil];
-    //[[[self.navigationController.navigationBar set] setTitleTextAttributes:attributes];
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
     
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
@@ -87,15 +83,15 @@
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        [_objects removeObjectAtIndex:indexPath.row];
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+//    }
+//}
 
 /*
 // Override to support rearranging the table view.

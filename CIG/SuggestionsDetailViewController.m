@@ -27,6 +27,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _dictionary = [Lexicontext sharedDictionary];
+    _delegate = [[AppDelegate alloc] init];
+    _askForLabel.textColor = _delegate.brandBlack;
+    _suggestionLabel.textColor = _delegate.brandBlack;
+    _askForLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
+    _suggestionLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
+    
+    [self getDefinition];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,6 +43,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)getDefinition
+{
+    NSString *toDefine = _suggestionLabel.text;
+    NSString *definition = [_dictionary definitionAsHTMLFor:@"Apple" withTextColor:@"Black" backgroundColor:@"FloralWhite" definitionBodyFontFamily:@"HelveticaNeue" definitionBodyFontSize:16.0];
+    [_definitionWebView loadHTMLString:definition baseURL:nil];
+}
 /*
 #pragma mark - Navigation
 

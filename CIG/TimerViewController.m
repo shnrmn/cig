@@ -25,23 +25,6 @@ static TimerViewController *singleTimerView;
     return self;
 }
 
-+(TimerViewController *)getInstance
-{
-    
-    static TimerViewController *single=nil;
-    
-    @synchronized(self)
-    {
-        if(!single)
-        {
-            single = [[TimerViewController alloc] init];
-            
-        }
-        
-    }
-    return single;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -58,7 +41,7 @@ static TimerViewController *singleTimerView;
     _secondStepper.autorepeat = YES;
     _currSeconds = _secondStepper.value;
     
-    _minuteStepper.maximumValue = 60;
+    _minuteStepper.maximumValue = 99;
     _secondStepper.maximumValue = 59;
     
     [self.view setBackgroundColor:_delegate.brandWhite];

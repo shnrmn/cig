@@ -45,6 +45,10 @@
 		00994278194ACA5C00AC1579 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00994277194ACA5C00AC1579 /* TimerViewController.m */; };
 		0099427B194BBC9600AC1579 /* MasterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0099427A194BBC9600AC1579 /* MasterDetailViewController.m */; };
 		0099427D194BED8600AC1579 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0099427C194BED8600AC1579 /* Main_iPad.storyboard */; };
+		00994280194D171500AC1579 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 0099427F194D171500AC1579 /* Note.m */; };
+		00994284194D187B00AC1579 /* Franchise-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00994282194D187B00AC1579 /* Franchise-Bold.ttf */; };
+		00994285194D187B00AC1579 /* Gotham-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00994283194D187B00AC1579 /* Gotham-XLight.otf */; };
+		00994289194D249B00AC1579 /* NoteDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 00994288194D249B00AC1579 /* NoteDAO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +117,12 @@
 		00994279194BBC9500AC1579 /* MasterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterDetailViewController.h; sourceTree = "<group>"; };
 		0099427A194BBC9600AC1579 /* MasterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterDetailViewController.m; sourceTree = "<group>"; };
 		0099427C194BED8600AC1579 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		0099427E194D171400AC1579 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		0099427F194D171500AC1579 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		00994282194D187B00AC1579 /* Franchise-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Franchise-Bold.ttf"; sourceTree = "<group>"; };
+		00994283194D187B00AC1579 /* Gotham-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLight.otf"; sourceTree = "<group>"; };
+		00994287194D249B00AC1579 /* NoteDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteDAO.h; sourceTree = "<group>"; };
+		00994288194D249B00AC1579 /* NoteDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDAO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,10 +211,10 @@
 				0099427A194BBC9600AC1579 /* MasterDetailViewController.m */,
 				00994277194ACA5C00AC1579 /* TimerViewController.m */,
 				0099427C194BED8600AC1579 /* Main_iPad.storyboard */,
+				006958951947EA4A00BE50CB /* Main_iPhone.storyboard */,
 				006958A11947EA4A00BE50CB /* Images.xcassets */,
 				00994259194A8FDE00AC1579 /* Data */,
 				006958CB194A795800BE50CB /* DetailViewControllers */,
-				006958951947EA4A00BE50CB /* Main_iPhone.storyboard */,
 				006958CA194A793600BE50CB /* MasterViewControllers */,
 				0069588A1947EA4A00BE50CB /* Supporting Files */,
 			);
@@ -214,6 +224,7 @@
 		0069588A1947EA4A00BE50CB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00994281194D186100AC1579 /* Fonts */,
 				00994260194A9F9700AC1579 /* LexicontextAssets.bundle */,
 				0069588B1947EA4A00BE50CB /* CIG-Info.plist */,
 				0069588C1947EA4A00BE50CB /* InfoPlist.strings */,
@@ -278,9 +289,30 @@
 		00994259194A8FDE00AC1579 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				00994286194D248100AC1579 /* DAO */,
 				0099425F194A9F9700AC1579 /* Lexicontext.h */,
+				0099427E194D171400AC1579 /* Note.h */,
+				0099427F194D171500AC1579 /* Note.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		00994281194D186100AC1579 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				00994282194D187B00AC1579 /* Franchise-Bold.ttf */,
+				00994283194D187B00AC1579 /* Gotham-XLight.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		00994286194D248100AC1579 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				00994287194D249B00AC1579 /* NoteDAO.h */,
+				00994288194D249B00AC1579 /* NoteDAO.m */,
+			);
+			name = DAO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,11 +391,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00994285194D187B00AC1579 /* Gotham-XLight.otf in Resources */,
 				0099427D194BED8600AC1579 /* Main_iPad.storyboard in Resources */,
 				006958A21947EA4A00BE50CB /* Images.xcassets in Resources */,
 				006958971947EA4A00BE50CB /* Main_iPhone.storyboard in Resources */,
 				00994262194A9F9700AC1579 /* LexicontextAssets.bundle in Resources */,
 				0069588E1947EA4A00BE50CB /* InfoPlist.strings in Resources */,
+				00994284194D187B00AC1579 /* Franchise-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00994280194D171500AC1579 /* Note.m in Sources */,
 				006958C3194A777000BE50CB /* SuggestionsMasterViewController.m in Sources */,
 				006958941947EA4A00BE50CB /* AppDelegate.m in Sources */,
 				00994278194ACA5C00AC1579 /* TimerViewController.m in Sources */,
@@ -395,6 +430,7 @@
 				006958D4194A79E100BE50CB /* SuggestionsDetailViewController.m in Sources */,
 				0099427B194BBC9600AC1579 /* MasterDetailViewController.m in Sources */,
 				006958901947EA4A00BE50CB /* main.m in Sources */,
+				00994289194D249B00AC1579 /* NoteDAO.m in Sources */,
 				006958A01947EA4A00BE50CB /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

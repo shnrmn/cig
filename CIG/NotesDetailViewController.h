@@ -10,6 +10,11 @@
 
 @interface NotesDetailViewController : DetailViewController
 
-@property (strong, nonatomic) IBOutlet TimerViewController *timerView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextView *bodyTextView;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+
+- (IBAction)save:(id)sender;
 
 @end

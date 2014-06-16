@@ -7,7 +7,12 @@
 //
 
 #import "MasterViewController.h"
+#import "Note.h"
+#import "NoteDAO.h"
 
 @interface NotesMasterViewController : MasterViewController
+
+@property(nonatomic, strong) NoteDAO *daoNote;
+@property(nonatomic, strong) NSMutableArray *notes;
 
 @end

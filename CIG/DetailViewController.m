@@ -47,7 +47,11 @@
 	// Do any additional setup after loading the view, typically from a nib.
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     self.view.backgroundColor = delegate.brandWhite;
-    _timerView = [TimerViewController getInstance];
+    
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
+                                                                           fontWithName:@"Franchise" size:40], NSFontAttributeName,
+                                delegate.brandBlack, NSForegroundColorAttributeName, nil];
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
     [self configureView];
 }

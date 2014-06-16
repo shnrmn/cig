@@ -7,6 +7,7 @@
 //
 
 #import "NotesDetailViewController.h"
+#import "AppDelegate.h"
 
 @interface NotesDetailViewController ()
 
@@ -27,6 +28,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
@@ -35,12 +38,21 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    
+    _titleLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
+    _titleLabel.textColor = delegate.brandBlack;
+    _saveButton.titleLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL) automaticallyAdjustsScrollViewInsets
+{
+    return NO;
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification
@@ -54,7 +66,7 @@
     NSDictionary* info = [notification userInfo];
     CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
-    [self.parentViewController.view setFrame:CGRectMake(0,keyboardSize.height,screenWidth,screenHeight)];
+    //[self.parentViewController.view setFrame:CGRectMake(0,keyboardSize.height,screenWidth,screenHeight)];
 }
 
 -(void)keyboardWillHide:(NSNotification *)notification
@@ -76,4 +88,8 @@
 }
 */
 
+- (IBAction)save:(id)sender
+{
+    
+}
 @end

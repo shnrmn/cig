@@ -24,7 +24,6 @@
 -(IBAction)reset:(id)sender;
 -(IBAction)minuteValueChanged:(UIStepper *)sender;
 -(IBAction)secondValueChanged:(UIStepper *)sender;
-+(TimerViewController *)getInstance;
 
 -(void)setTimeText;
 
