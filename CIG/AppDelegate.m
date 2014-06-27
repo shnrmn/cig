@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <Parse/Parse.h>
+#import "AskFor.h"
 
 @implementation AppDelegate
 
@@ -24,6 +24,7 @@
     // Navigation bar buttons appearance
     [[UIBarButtonItem appearance] setTintColor:_brandWhite];
     
+    [AskFor registerSubclass];
     [Parse setApplicationId:@"XTZO0ccMXVwnoXHjwYu97Sa2VadIGwcYYAU41ivF"
     clientKey:@"uoYx4URUucwRHo3sjmGsb2KzkguCvVhlHfDkZ7zs"];
     
@@ -31,10 +32,8 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
     
-    //UISplitViewController *splitViewController = [[MasterDetailViewController alloc] init];
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     
-    //UIViewController* detail1 = [storyboard instantiateViewControllerWithIdentifier:@"Training Root"];
     UIViewController* detail1 = [splitViewController.viewControllers objectAtIndex:1];
     UIViewController* detail2 = [storyboard instantiateViewControllerWithIdentifier:@"Suggestions Root"];
     UIViewController* detail3 = [storyboard instantiateViewControllerWithIdentifier:@"Judging Root"];
@@ -46,7 +45,6 @@
     return YES;
 }
 
-							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

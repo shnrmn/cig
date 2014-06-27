@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0030D56B195A74F4003427CA /* EmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0030D56A195A74F4003427CA /* EmptyViewController.m */; };
+		0030D56E195A9C67003427CA /* ExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0030D56D195A9C67003427CA /* ExerciseCell.m */; };
+		0030D571195AC27F003427CA /* JudgingPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0030D570195AC27F003427CA /* JudgingPopoverViewController.m */; };
 		006958841947EA4A00BE50CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006958831947EA4A00BE50CB /* Foundation.framework */; };
 		006958861947EA4A00BE50CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006958851947EA4A00BE50CB /* CoreGraphics.framework */; };
 		006958881947EA4A00BE50CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006958871947EA4A00BE50CB /* UIKit.framework */; };
@@ -31,8 +34,6 @@
 		006958D7194A79F000BE50CB /* JudgingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006958D6194A79F000BE50CB /* JudgingDetailViewController.m */; };
 		006958DA194A79FF00BE50CB /* NotesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006958D9194A79FF00BE50CB /* NotesDetailViewController.m */; };
 		0099425B194A913B00AC1579 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0099425A194A913B00AC1579 /* Parse.framework */; };
-		00994262194A9F9700AC1579 /* LexicontextAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00994260194A9F9700AC1579 /* LexicontextAssets.bundle */; };
-		00994263194A9F9700AC1579 /* libLexicontext.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00994261194A9F9700AC1579 /* libLexicontext.a */; };
 		00994265194AA5D600AC1579 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00994264194AA5D600AC1579 /* AudioToolbox.framework */; };
 		00994267194AA5E000AC1579 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00994266194AA5E000AC1579 /* CFNetwork.framework */; };
 		00994269194AA5F200AC1579 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00994268194AA5F200AC1579 /* CoreLocation.framework */; };
@@ -45,10 +46,20 @@
 		00994278194ACA5C00AC1579 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00994277194ACA5C00AC1579 /* TimerViewController.m */; };
 		0099427B194BBC9600AC1579 /* MasterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0099427A194BBC9600AC1579 /* MasterDetailViewController.m */; };
 		0099427D194BED8600AC1579 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0099427C194BED8600AC1579 /* Main_iPad.storyboard */; };
-		00994280194D171500AC1579 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 0099427F194D171500AC1579 /* Note.m */; };
 		00994284194D187B00AC1579 /* Franchise-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00994282194D187B00AC1579 /* Franchise-Bold.ttf */; };
 		00994285194D187B00AC1579 /* Gotham-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00994283194D187B00AC1579 /* Gotham-XLight.otf */; };
 		00994289194D249B00AC1579 /* NoteDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 00994288194D249B00AC1579 /* NoteDAO.m */; };
+		0099428E194EC19A00AC1579 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0099428D194EC19A00AC1579 /* YTPlayerView.m */; };
+		00994291194ECDDF00AC1579 /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = 00994290194ECDDF00AC1579 /* YTPlayerView-iframe-player.html */; };
+		0099429819513AA000AC1579 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0099429719513AA000AC1579 /* NoteCell.m */; };
+		0099429B19515ADC00AC1579 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0099429A19515ADC00AC1579 /* NSDate+Helper.m */; };
+		0099429E19527E5800AC1579 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0099429D19527E5800AC1579 /* CoreData.framework */; };
+		009942A219527F6200AC1579 /* CIG.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 009942A019527F6200AC1579 /* CIG.xcdatamodeld */; };
+		009942A51952BF6D00AC1579 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 009942A41952BF6C00AC1579 /* Note.m */; };
+		009942A81954028100AC1579 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 009942A71954028100AC1579 /* DataStore.m */; };
+		009942AC1959524A00AC1579 /* LexicontextAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 009942AB1959524A00AC1579 /* LexicontextAssets.bundle */; };
+		009942AE1959525800AC1579 /* libLexicontext.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 009942AD1959525800AC1579 /* libLexicontext.a */; };
+		009942B11959772E00AC1579 /* AskFor.m in Sources */ = {isa = PBXBuildFile; fileRef = 009942B01959772E00AC1579 /* AskFor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +73,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0030D569195A74F4003427CA /* EmptyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyViewController.h; sourceTree = "<group>"; };
+		0030D56A195A74F4003427CA /* EmptyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyViewController.m; sourceTree = "<group>"; };
+		0030D56C195A9C67003427CA /* ExerciseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseCell.h; sourceTree = "<group>"; };
+		0030D56D195A9C67003427CA /* ExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseCell.m; sourceTree = "<group>"; };
+		0030D56F195AC27F003427CA /* JudgingPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JudgingPopoverViewController.h; sourceTree = "<group>"; };
+		0030D570195AC27F003427CA /* JudgingPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JudgingPopoverViewController.m; sourceTree = "<group>"; };
 		006958801947EA4A00BE50CB /* CIG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006958831947EA4A00BE50CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		006958851947EA4A00BE50CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,9 +117,6 @@
 		006958D8194A79FF00BE50CB /* NotesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesDetailViewController.h; sourceTree = "<group>"; };
 		006958D9194A79FF00BE50CB /* NotesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesDetailViewController.m; sourceTree = "<group>"; };
 		0099425A194A913B00AC1579 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../ParseStarterProject/Parse.framework; sourceTree = "<group>"; };
-		0099425F194A9F9700AC1579 /* Lexicontext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lexicontext.h; path = "../../lexicontext-1.2-trial/Lexicontext.h"; sourceTree = "<group>"; };
-		00994260194A9F9700AC1579 /* LexicontextAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = LexicontextAssets.bundle; path = "../../lexicontext-1.2-trial/LexicontextAssets.bundle"; sourceTree = "<group>"; };
-		00994261194A9F9700AC1579 /* libLexicontext.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLexicontext.a; path = "../lexicontext-1.2-trial/libLexicontext.a"; sourceTree = "<group>"; };
 		00994264194AA5D600AC1579 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		00994266194AA5E000AC1579 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		00994268194AA5F200AC1579 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -117,12 +131,28 @@
 		00994279194BBC9500AC1579 /* MasterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterDetailViewController.h; sourceTree = "<group>"; };
 		0099427A194BBC9600AC1579 /* MasterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterDetailViewController.m; sourceTree = "<group>"; };
 		0099427C194BED8600AC1579 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
-		0099427E194D171400AC1579 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		0099427F194D171500AC1579 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		00994282194D187B00AC1579 /* Franchise-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Franchise-Bold.ttf"; sourceTree = "<group>"; };
 		00994283194D187B00AC1579 /* Gotham-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLight.otf"; sourceTree = "<group>"; };
 		00994287194D249B00AC1579 /* NoteDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteDAO.h; sourceTree = "<group>"; };
 		00994288194D249B00AC1579 /* NoteDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDAO.m; sourceTree = "<group>"; };
+		0099428C194EC19A00AC1579 /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
+		0099428D194EC19A00AC1579 /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
+		00994290194ECDDF00AC1579 /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
+		0099429619513AA000AC1579 /* NoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteCell.h; sourceTree = "<group>"; };
+		0099429719513AA000AC1579 /* NoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteCell.m; sourceTree = "<group>"; };
+		0099429919515ADC00AC1579 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		0099429A19515ADC00AC1579 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		0099429D19527E5800AC1579 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		009942A119527F6200AC1579 /* CIG.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CIG.xcdatamodel; sourceTree = "<group>"; };
+		009942A31952BF6C00AC1579 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		009942A41952BF6C00AC1579 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		009942A61954028100AC1579 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
+		009942A71954028100AC1579 /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
+		009942AA1959521900AC1579 /* Lexicontext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lexicontext.h; sourceTree = "<group>"; };
+		009942AB1959524A00AC1579 /* LexicontextAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LexicontextAssets.bundle; sourceTree = "<group>"; };
+		009942AD1959525800AC1579 /* libLexicontext.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLexicontext.a; sourceTree = "<group>"; };
+		009942AF1959772E00AC1579 /* AskFor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskFor.h; sourceTree = "<group>"; };
+		009942B01959772E00AC1579 /* AskFor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskFor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0099429E19527E5800AC1579 /* CoreData.framework in Frameworks */,
 				00994275194AA62C00AC1579 /* SystemConfiguration.framework in Frameworks */,
 				00994273194AA62100AC1579 /* StoreKit.framework in Frameworks */,
 				00994271194AA61B00AC1579 /* Security.framework in Frameworks */,
@@ -138,12 +169,12 @@
 				0099426B194AA60200AC1579 /* libz.dylib in Frameworks */,
 				00994269194AA5F200AC1579 /* CoreLocation.framework in Frameworks */,
 				006958861947EA4A00BE50CB /* CoreGraphics.framework in Frameworks */,
+				009942AE1959525800AC1579 /* libLexicontext.a in Frameworks */,
 				00994267194AA5E000AC1579 /* CFNetwork.framework in Frameworks */,
 				00994265194AA5D600AC1579 /* AudioToolbox.framework in Frameworks */,
 				0099425B194A913B00AC1579 /* Parse.framework in Frameworks */,
 				006958881947EA4A00BE50CB /* UIKit.framework in Frameworks */,
 				006958841947EA4A00BE50CB /* Foundation.framework in Frameworks */,
-				00994263194A9F9700AC1579 /* libLexicontext.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +213,8 @@
 		006958821947EA4A00BE50CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				009942AD1959525800AC1579 /* libLexicontext.a */,
+				0099429D19527E5800AC1579 /* CoreData.framework */,
 				00994274194AA62C00AC1579 /* SystemConfiguration.framework */,
 				00994272194AA62100AC1579 /* StoreKit.framework */,
 				00994270194AA61B00AC1579 /* Security.framework */,
@@ -191,7 +224,6 @@
 				00994268194AA5F200AC1579 /* CoreLocation.framework */,
 				00994266194AA5E000AC1579 /* CFNetwork.framework */,
 				00994264194AA5D600AC1579 /* AudioToolbox.framework */,
-				00994261194A9F9700AC1579 /* libLexicontext.a */,
 				0099425A194A913B00AC1579 /* Parse.framework */,
 				006958831947EA4A00BE50CB /* Foundation.framework */,
 				006958851947EA4A00BE50CB /* CoreGraphics.framework */,
@@ -205,18 +237,24 @@
 			isa = PBXGroup;
 			children = (
 				006958921947EA4A00BE50CB /* AppDelegate.h */,
+				0030D569195A74F4003427CA /* EmptyViewController.h */,
+				0030D56F195AC27F003427CA /* JudgingPopoverViewController.h */,
 				00994279194BBC9500AC1579 /* MasterDetailViewController.h */,
 				00994276194ACA5C00AC1579 /* TimerViewController.h */,
 				006958931947EA4A00BE50CB /* AppDelegate.m */,
+				0030D56A195A74F4003427CA /* EmptyViewController.m */,
+				0030D570195AC27F003427CA /* JudgingPopoverViewController.m */,
 				0099427A194BBC9600AC1579 /* MasterDetailViewController.m */,
 				00994277194ACA5C00AC1579 /* TimerViewController.m */,
 				0099427C194BED8600AC1579 /* Main_iPad.storyboard */,
-				006958951947EA4A00BE50CB /* Main_iPhone.storyboard */,
 				006958A11947EA4A00BE50CB /* Images.xcassets */,
+				009942A019527F6200AC1579 /* CIG.xcdatamodeld */,
 				00994259194A8FDE00AC1579 /* Data */,
 				006958CB194A795800BE50CB /* DetailViewControllers */,
+				006958951947EA4A00BE50CB /* Main_iPhone.storyboard */,
 				006958CA194A793600BE50CB /* MasterViewControllers */,
 				0069588A1947EA4A00BE50CB /* Supporting Files */,
+				0099429519513A6A00AC1579 /* TableCells */,
 			);
 			path = CIG;
 			sourceTree = "<group>";
@@ -224,8 +262,9 @@
 		0069588A1947EA4A00BE50CB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				009942AB1959524A00AC1579 /* LexicontextAssets.bundle */,
+				0099428F194ECDDF00AC1579 /* Assets */,
 				00994281194D186100AC1579 /* Fonts */,
-				00994260194A9F9700AC1579 /* LexicontextAssets.bundle */,
 				0069588B1947EA4A00BE50CB /* CIG-Info.plist */,
 				0069588C1947EA4A00BE50CB /* InfoPlist.strings */,
 				0069588F1947EA4A00BE50CB /* main.m */,
@@ -289,10 +328,14 @@
 		00994259194A8FDE00AC1579 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				009942A31952BF6C00AC1579 /* Note.h */,
+				009942A41952BF6C00AC1579 /* Note.m */,
+				0099429C19515AE100AC1579 /* Third Party Libraries */,
 				00994286194D248100AC1579 /* DAO */,
-				0099425F194A9F9700AC1579 /* Lexicontext.h */,
-				0099427E194D171400AC1579 /* Note.h */,
-				0099427F194D171500AC1579 /* Note.m */,
+				009942A61954028100AC1579 /* DataStore.h */,
+				009942A71954028100AC1579 /* DataStore.m */,
+				009942AF1959772E00AC1579 /* AskFor.h */,
+				009942B01959772E00AC1579 /* AskFor.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -313,6 +356,37 @@
 				00994288194D249B00AC1579 /* NoteDAO.m */,
 			);
 			name = DAO;
+			sourceTree = "<group>";
+		};
+		0099428F194ECDDF00AC1579 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				00994290194ECDDF00AC1579 /* YTPlayerView-iframe-player.html */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		0099429519513A6A00AC1579 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				0099429619513AA000AC1579 /* NoteCell.h */,
+				0099429719513AA000AC1579 /* NoteCell.m */,
+				0030D56C195A9C67003427CA /* ExerciseCell.h */,
+				0030D56D195A9C67003427CA /* ExerciseCell.m */,
+			);
+			name = TableCells;
+			sourceTree = "<group>";
+		};
+		0099429C19515AE100AC1579 /* Third Party Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				009942AA1959521900AC1579 /* Lexicontext.h */,
+				0099429919515ADC00AC1579 /* NSDate+Helper.h */,
+				0099429A19515ADC00AC1579 /* NSDate+Helper.m */,
+				0099428C194EC19A00AC1579 /* YTPlayerView.h */,
+				0099428D194EC19A00AC1579 /* YTPlayerView.m */,
+			);
+			name = "Third Party Libraries";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,9 +467,10 @@
 			files = (
 				00994285194D187B00AC1579 /* Gotham-XLight.otf in Resources */,
 				0099427D194BED8600AC1579 /* Main_iPad.storyboard in Resources */,
+				009942AC1959524A00AC1579 /* LexicontextAssets.bundle in Resources */,
+				00994291194ECDDF00AC1579 /* YTPlayerView-iframe-player.html in Resources */,
 				006958A21947EA4A00BE50CB /* Images.xcassets in Resources */,
 				006958971947EA4A00BE50CB /* Main_iPhone.storyboard in Resources */,
-				00994262194A9F9700AC1579 /* LexicontextAssets.bundle in Resources */,
 				0069588E1947EA4A00BE50CB /* InfoPlist.strings in Resources */,
 				00994284194D187B00AC1579 /* Franchise-Bold.ttf in Resources */,
 			);
@@ -416,18 +491,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00994280194D171500AC1579 /* Note.m in Sources */,
 				006958C3194A777000BE50CB /* SuggestionsMasterViewController.m in Sources */,
+				0030D56E195A9C67003427CA /* ExerciseCell.m in Sources */,
 				006958941947EA4A00BE50CB /* AppDelegate.m in Sources */,
+				009942A219527F6200AC1579 /* CIG.xcdatamodeld in Sources */,
+				0099428E194EC19A00AC1579 /* YTPlayerView.m in Sources */,
+				0099429B19515ADC00AC1579 /* NSDate+Helper.m in Sources */,
 				00994278194ACA5C00AC1579 /* TimerViewController.m in Sources */,
 				006958C9194A77A700BE50CB /* NotesMasterViewController.m in Sources */,
 				006958C0194A775300BE50CB /* TrainingMasterViewController.m in Sources */,
 				006958D7194A79F000BE50CB /* JudgingDetailViewController.m in Sources */,
 				006958DA194A79FF00BE50CB /* NotesDetailViewController.m in Sources */,
 				006958D1194A79D000BE50CB /* TrainingDetailViewController.m in Sources */,
+				009942B11959772E00AC1579 /* AskFor.m in Sources */,
+				009942A51952BF6D00AC1579 /* Note.m in Sources */,
 				006958CE194A798A00BE50CB /* MasterViewController.m in Sources */,
 				006958C6194A778400BE50CB /* JudgingMasterViewController.m in Sources */,
+				0030D56B195A74F4003427CA /* EmptyViewController.m in Sources */,
+				009942A81954028100AC1579 /* DataStore.m in Sources */,
 				006958D4194A79E100BE50CB /* SuggestionsDetailViewController.m in Sources */,
+				0030D571195AC27F003427CA /* JudgingPopoverViewController.m in Sources */,
+				0099429819513AA000AC1579 /* NoteCell.m in Sources */,
 				0099427B194BBC9600AC1579 /* MasterDetailViewController.m in Sources */,
 				006958901947EA4A00BE50CB /* main.m in Sources */,
 				00994289194D249B00AC1579 /* NoteDAO.m in Sources */,
@@ -568,6 +652,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/shawnnorman/Documents/COMP3912/lexicontext-1.2-trial",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -589,6 +674,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/shawnnorman/Documents/COMP3912/lexicontext-1.2-trial",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -666,6 +752,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		009942A019527F6200AC1579 /* CIG.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				009942A119527F6200AC1579 /* CIG.xcdatamodel */,
+			);
+			currentVersion = 009942A119527F6200AC1579 /* CIG.xcdatamodel */;
+			path = CIG.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 006958781947EA4A00BE50CB /* Project object */;
 }

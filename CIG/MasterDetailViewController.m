@@ -22,43 +22,33 @@
     _timerView.view.translatesAutoresizingMaskIntoConstraints = NO;
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:_timerView.view];
+    
+    [self registerForKeyboardNotifications];
     [self updateViewConstraints];
 }
 
 - (void)updateViewConstraints
 {
     [super updateViewConstraints];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_timerView.view
-                                                          attribute:NSLayoutAttributeBottom
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0
-                                                           constant:0.0]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_timerView.view
-                                                          attribute:NSLayoutAttributeTrailing
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeTrailing
-                                                         multiplier:1.0
-                                                           constant:30.0]];
+    _bottom = [NSLayoutConstraint constraintWithItem:_timerView.view
+                                           attribute:NSLayoutAttributeBottom
+                                           relatedBy:NSLayoutRelationEqual
+                                              toItem:self.view
+                                           attribute:NSLayoutAttributeBottom
+                                          multiplier:1.0
+                                            constant:0.0];
     
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_timerView.view
-//                                                          attribute:NSLayoutAttributeHeight
-//                                                          relatedBy:NSLayoutRelationEqual
-//                                                             toItem:_timerView.view
-//                                                          attribute:NSLayoutAttributeHeight
-//                                                         multiplier:1.0
-//                                                           constant:134.0]];
-//    
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_timerView.view
-//                                                          attribute:NSLayoutAttributeWidth
-//                                                          relatedBy:NSLayoutRelationEqual
-//                                                             toItem:_timerView.view
-//                                                          attribute:NSLayoutAttributeWidth
-//                                                         multiplier:1.0
-//                                                           constant:720.0]];
+    _trailing = [NSLayoutConstraint constraintWithItem:_timerView.view
+                                             attribute:NSLayoutAttributeTrailing
+                                             relatedBy:NSLayoutRelationEqual
+                                                toItem:self.view
+                                             attribute:NSLayoutAttributeTrailing
+                                            multiplier:1.0
+                                              constant:30.0];
+    
+    [self.view addConstraint:_bottom];
+    [self.view addConstraint:_trailing];
 
 }
 
@@ -80,6 +70,50 @@
 
     
     return self;
+}
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardDidChangeFrameNotification object:nil];
+    
+}
+
+
+-(void)keyboardDidChangeFrame:(NSNotification*)notification
+{
+    NSDictionary *info = [notification userInfo];
+    CGPoint kbOrigin = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].origin;
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    float offset = 0;
+    float timerOffset = 0;
+    //if UIInterfaceOrientationIsPortrait(self.interfaceOrientation)
+    if (self.interfaceOrientation == UIInterfaceOrientationPortrait) {
+        offset = kbOrigin.y;
+        timerOffset = offset - 134;
+    }
+    //else if UIInterfaceOrientationIsLandscape(self.interfaceOrientation)
+    else if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
+        offset = kbOrigin.x;
+        timerOffset = offset - 134;
+    }
+    else if (self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+        offset -= kbOrigin.x - screenSize.width + kbSize.width;
+        timerOffset = (offset - 134);
+    }
+    else if (self.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
+        offset -= kbOrigin.y - screenSize.height + kbSize.height;
+        timerOffset = (offset - 134);
+    }
+    
+    //float timerOffset = offset - 134;
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         CGRect frameOffset = self.timerView.view.frame;
+                         frameOffset.origin.y = timerOffset;
+                         self.timerView.view.frame = frameOffset;
+                     }
+     ];
 }
 
 /* forward the message to the current detail view

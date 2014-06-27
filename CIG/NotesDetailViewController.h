@@ -7,14 +7,19 @@
 //
 
 #import "DetailViewController.h"
+#import "Note.h"
 
-@interface NotesDetailViewController : DetailViewController
+@interface NotesDetailViewController : DetailViewController <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *bodyTextView;
-@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-- (IBAction)save:(id)sender;
+@property (strong, nonatomic) Note *detailItem;
+
+- (IBAction)newTitle:(id)sender;
 
 @end

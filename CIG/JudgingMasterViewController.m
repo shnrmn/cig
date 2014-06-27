@@ -27,12 +27,49 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _delegate = [[UIApplication sharedApplication] delegate];
+    
+    self.tableView.backgroundColor = _delegate.brandWhite;
+    UIView *footerView = [[UIView alloc] init];
+    footerView.backgroundColor = [UIColor clearColor];
+    self.tableView.tableFooterView = footerView;
+    NSMutableArray *events = [[NSMutableArray alloc] initWithObjects:@"Story",@"Character",@"Style",@"Theme",@"Life",@"Open", nil];
+    super.objects = events;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Judging Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:cellIdentifier];
+    }
+    
+    NSString *object = super.objects[indexPath.row];
+    cell.textLabel.text = object;
+    cell.textLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:20];
+    cell.textLabel.textColor = _delegate.brandBlack;
+    [cell setBackgroundColor:_delegate.brandWhite];
+    cell.textLabel.highlightedTextColor = _delegate.brandBlack;
+
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        NSString *object = super.objects[indexPath.row];
+        JudgingDetailViewController *detailView = (JudgingDetailViewController *)self.detailViewController;
+        [detailView setDetailItem:object];
+    }
 }
 
 /*

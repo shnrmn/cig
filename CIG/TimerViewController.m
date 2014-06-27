@@ -44,7 +44,7 @@ static TimerViewController *singleTimerView;
     _minuteStepper.maximumValue = 99;
     _secondStepper.maximumValue = 59;
     
-    [self.view setBackgroundColor:_delegate.brandWhite];
+    [self.view setBackgroundColor:[UIColor clearColor]];
     
     [self setTimeText];
 }

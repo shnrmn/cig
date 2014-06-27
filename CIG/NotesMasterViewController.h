@@ -9,10 +9,18 @@
 #import "MasterViewController.h"
 #import "Note.h"
 #import "NoteDAO.h"
+#import "NotesDetailViewController.h"
+#import "DataStore.h"
+#import "NoteCell.h"
+#import "AppDelegate.h"
+#import "NSDate+Helper.h"
 
-@interface NotesMasterViewController : MasterViewController
+@interface NotesMasterViewController : MasterViewController <NSFetchedResultsControllerDelegate>
 
-@property(nonatomic, strong) NoteDAO *daoNote;
-@property(nonatomic, strong) NSMutableArray *notes;
+@property (strong, nonatomic) AppDelegate *delegate;
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, strong) DataStore *ds;
 
 @end

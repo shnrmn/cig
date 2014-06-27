@@ -23,18 +23,43 @@
     return self;
 }
 
+- (BOOL)canBecomeFirstResponder {
+    
+    return YES;
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self becomeFirstResponder];
     _dictionary = [Lexicontext sharedDictionary];
-    _delegate = [[AppDelegate alloc] init];
+    _delegate = [[UIApplication sharedApplication] delegate];
+    _delegate.masterDetailManager.delegate = self;
     _askForLabel.textColor = _delegate.brandBlack;
     _suggestionLabel.textColor = _delegate.brandBlack;
     _askForLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
     _suggestionLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
     
     [self getDefinition];
+}
+
+- (void)configureView
+{
+    // Update the user interface for the detail item.
+    if (self.detailItem) {
+        [self.navigationController popViewControllerAnimated:YES];
+        self.askForLabel.text = self.detailItem.type;
+        if ([self.detailItem.type isEqual: @"Any Word"]) {
+            _dictionary = [Lexicontext sharedDictionary];
+            self.suggestionLabel.text = [_dictionary randomWord];
+        }
+        else {
+        self.suggestionLabel.text = [self.detailItem randomSuggestion];
+        }
+        [self getDefinition];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,9 +71,49 @@
 - (void)getDefinition
 {
     NSString *toDefine = _suggestionLabel.text;
-    NSString *definition = [_dictionary definitionAsHTMLFor:@"Apple" withTextColor:@"Black" backgroundColor:@"FloralWhite" definitionBodyFontFamily:@"HelveticaNeue" definitionBodyFontSize:16.0];
+    NSMutableString *definition = [[NSMutableString alloc] init];
+    if ([_dictionary containsDefinitionFor:toDefine]) {
+        [definition appendString:[_dictionary definitionAsHTMLFor:toDefine withTextColor:@"Black" backgroundColor:@"FloralWhite" definitionBodyFontFamily:@"HelveticaNeue" definitionBodyFontSize:16.0]];
+        
+    }
+    else {
+        NSArray *phrases = [toDefine componentsSeparatedByString:@"&"];
+        for (NSString *phrase in phrases)
+        {
+            if ([_dictionary containsDefinitionFor:phrase]) {
+                [definition appendString:[_dictionary definitionAsHTMLFor:phrase withTextColor:@"Black" backgroundColor:@"FloralWhite" definitionBodyFontFamily:@"HelveticaNeue" definitionBodyFontSize:16.0]];
+                [_definitionWebView loadHTMLString:definition baseURL:nil];
+            }
+            else {
+                NSArray *words = [phrase componentsSeparatedByString:@" "];
+                for (NSString *word in words)
+                {
+                    if ([_dictionary containsDefinitionFor:word]) {
+                    [definition appendString:[_dictionary definitionAsHTMLFor:word withTextColor:@"Black" backgroundColor:@"FloralWhite" definitionBodyFontFamily:@"HelveticaNeue" definitionBodyFontSize:16.0]];
+                    [_definitionWebView loadHTMLString:definition baseURL:nil];
+                    }
+                }
+            }
+        }
+        
+    }
     [_definitionWebView loadHTMLString:definition baseURL:nil];
 }
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        [self refresh:self];
+    }
+    
+}
+
+- (IBAction)refresh:(id)sender
+{
+    [self configureView];
+}
+
 /*
 #pragma mark - Navigation
 

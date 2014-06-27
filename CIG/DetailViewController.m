@@ -10,8 +10,7 @@
 #import "AppDelegate.h"
 
 @interface DetailViewController ()
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
-- (void)configureView;
+
 @end
 
 @implementation DetailViewController
@@ -53,7 +52,13 @@
                                 delegate.brandBlack, NSForegroundColorAttributeName, nil];
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
-    [self configureView];
+    if (!self.detailItem) {
+        EmptyViewController *emptyView = [self.storyboard instantiateViewControllerWithIdentifier:@"EmptyView"];
+        [self.navigationController pushViewController:emptyView animated:YES];
+    }
+    else {
+        [self configureView];
+    }
 }
 
 - (void)didReceiveMemoryWarning

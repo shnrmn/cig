@@ -12,6 +12,10 @@
 
 @property (strong, nonatomic) UISplitViewController *splitViewController;
 @property (strong, nonatomic) NSArray *detailControllers;
+
+@property (strong, nonatomic) NSLayoutConstraint *bottom;
+@property (strong, nonatomic) NSLayoutConstraint *trailing;
+
 @property (strong, nonatomic) UIBarButtonItem *masterBarButtonItem;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (strong, nonatomic) UIViewController *currentDetailController;

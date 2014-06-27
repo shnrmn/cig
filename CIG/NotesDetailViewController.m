@@ -8,6 +8,7 @@
 
 #import "NotesDetailViewController.h"
 #import "AppDelegate.h"
+#import "NSDate+Helper.h"
 
 @interface NotesDetailViewController ()
 
@@ -30,18 +31,11 @@
     // Do any additional setup after loading the view.
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-    
     _titleLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
     _titleLabel.textColor = delegate.brandBlack;
-    _saveButton.titleLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
+    _dateLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
+    _dateLabel.textColor = delegate.brandBlack;
+    _bodyTextView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,33 +44,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL) automaticallyAdjustsScrollViewInsets
+- (void)configureView
 {
-    return NO;
+    // Update the user interface for the detail item.
+    if (self.detailItem) {
+        [self.navigationController popViewControllerAnimated:YES];
+        self.titleTextField.text = self.detailItem.title;
+        self.bodyTextView.text = self.detailItem.body;
+        self.dateLabel.text = [NSDate stringForDisplayFromDate:self.detailItem.date];
+    }
 }
 
-- (void)keyboardWillShow:(NSNotification *)notification
-{
-    
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
-    
-    //Assign new frame to your view
-    NSDictionary* info = [notification userInfo];
-    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    
-    //[self.parentViewController.view setFrame:CGRectMake(0,keyboardSize.height,screenWidth,screenHeight)];
-}
-
--(void)keyboardWillHide:(NSNotification *)notification
-{
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
-    
-    [self.parentViewController.view setFrame:CGRectMake(0,0,screenWidth,screenHeight)];
-}
 /*
 #pragma mark - Navigation
 
@@ -88,8 +66,15 @@
 }
 */
 
-- (IBAction)save:(id)sender
+- (IBAction)newTitle:(id)sender
 {
-    
+    self.detailItem.title = self.titleTextField.text;
 }
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    self.detailItem.body = textView.text;
+}
+
+
 @end

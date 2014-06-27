@@ -7,7 +7,10 @@
 //
 
 #import "MasterViewController.h"
+#import "JudgingDetailViewController.h"
 
 @interface JudgingMasterViewController : MasterViewController
+
+@property (strong, nonatomic) AppDelegate *delegate;
 
 @end

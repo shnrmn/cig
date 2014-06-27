@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "TimerViewController.h"
+#import "EmptyViewController.h"
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+
+- (void)configureView;
 
 @end

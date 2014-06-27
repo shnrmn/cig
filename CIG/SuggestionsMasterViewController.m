@@ -20,6 +20,7 @@
     if (self) {
         // Custom initialization
     }
+    
     return self;
 }
 
@@ -27,6 +28,23 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _delegate = [[UIApplication sharedApplication] delegate];
+    
+    self.tableView.backgroundColor = _delegate.brandWhite;
+    UIView *footerView = [[UIView alloc] init];
+    footerView.backgroundColor = [UIColor clearColor];
+    self.tableView.tableFooterView = footerView;
+    PFQuery *query = [PFQuery queryWithClassName:@"AskFor"];
+    [query orderByAscending:@"type"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *askFors, NSError *error) {
+        if (!error) {
+            super.objects = [askFors mutableCopy];
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,15 +53,53 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+                        object:(AskFor *)object {
+    static NSString *cellIdentifier = @"Suggestions Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:cellIdentifier];
+    }
+    
+    cell.textLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:20];
+    cell.textLabel.text = [object objectForKey:@"type"];
+    cell.textLabel.textColor = _delegate.brandBlack;
+    [cell setBackgroundColor:_delegate.brandWhite];
+    cell.textLabel.highlightedTextColor = _delegate.brandBlack;
+    
+    return cell;
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Suggestions Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:cellIdentifier];
+    }
+    
+    AskFor *object = super.objects[indexPath.row];
+    cell.textLabel.text = object.type;
+    cell.textLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:20];
+    cell.textLabel.textColor = _delegate.brandBlack;
+    [cell setBackgroundColor:_delegate.brandWhite];
+    cell.textLabel.highlightedTextColor = _delegate.brandBlack;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        AskFor *object = super.objects[indexPath.row];
+        SuggestionsDetailViewController *detailView = (SuggestionsDetailViewController *)self.detailViewController;
+        [detailView setDetailItem:object];
+    }
+}
 
 @end

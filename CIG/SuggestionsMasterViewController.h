@@ -6,8 +6,13 @@
 //  Copyright (c) 2014 Shawn Norman. All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import "MasterViewController.h"
+#import "SuggestionsDetailViewController.h"
+#import "AskFor.h"
 
 @interface SuggestionsMasterViewController : MasterViewController
+
+@property (strong, nonatomic) AppDelegate *delegate;
 
 @end

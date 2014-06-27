@@ -7,9 +7,10 @@
 //
 
 #import "DetailViewController.h"
+#import "JudgingPopoverViewController.h"
 #import "AppDelegate.h"
 
-@interface JudgingDetailViewController : DetailViewController
+@interface JudgingDetailViewController : DetailViewController <JudgingPopoverDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *eventLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalNumberLabel;
@@ -25,21 +26,24 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *suggestion;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *interest;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *risk;
+
 @property (nonatomic,strong) UIPopoverController *popOver;
 @property (strong, nonatomic) AppDelegate *delegate;
+@property (strong, nonatomic) NSString *detailItem;
+
 
 - (IBAction)totalChanged:(id)sender;
-- (IBAction)makingInfo:(id)sender;
-- (IBAction)acceptingInfo:(id)sender;
-- (IBAction)advancingInfo:(id)sender;
-- (IBAction)listeningInfo:(id)sender;
-- (IBAction)commitmentInfo:(id)sender;
-- (IBAction)stakesInfo:(id)sender;
-- (IBAction)stagingInfo:(id)sender;
-- (IBAction)skillInfo:(id)sender;
-- (IBAction)suggestionInfo:(id)sender;
-- (IBAction)interestInfo:(id)sender;
-- (IBAction)riskInfo:(id)sender;
+- (IBAction)makingInfo:(UIButton *)sender;
+- (IBAction)acceptingInfo:(UIButton *)sender;
+- (IBAction)advancingInfo:(UIButton *)sender;
+- (IBAction)listeningInfo:(UIButton *)sender;
+- (IBAction)commitmentInfo:(UIButton *)sender;
+- (IBAction)stakesInfo:(UIButton *)sender;
+- (IBAction)stagingInfo:(UIButton *)sender;
+- (IBAction)skillInfo:(UIButton *)sender;
+- (IBAction)suggestionInfo:(UIButton *)sender;
+- (IBAction)interestInfo:(UIButton *)sender;
+- (IBAction)riskInfo:(UIButton *)sender;
 
 
 

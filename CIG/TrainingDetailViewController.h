@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "YTPlayerView.h"
 
 @interface TrainingDetailViewController : DetailViewController
 
