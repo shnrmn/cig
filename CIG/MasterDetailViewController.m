@@ -87,12 +87,11 @@
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     float offset = 0;
     float timerOffset = 0;
-    //if UIInterfaceOrientationIsPortrait(self.interfaceOrientation)
+    float minOffset = 284;
     if (self.interfaceOrientation == UIInterfaceOrientationPortrait) {
         offset = kbOrigin.y;
         timerOffset = offset - 134;
     }
-    //else if UIInterfaceOrientationIsLandscape(self.interfaceOrientation)
     else if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
         offset = kbOrigin.x;
         timerOffset = offset - 134;
@@ -106,7 +105,9 @@
         timerOffset = (offset - 134);
     }
     
-    //float timerOffset = offset - 134;
+    if (timerOffset < minOffset) {
+        timerOffset = minOffset;
+    }
     [UIView animateWithDuration:0.3
                      animations:^{
                          CGRect frameOffset = self.timerView.view.frame;

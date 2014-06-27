@@ -1088,6 +1088,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="eRn-eP-60I">
+                                <rect key="frame" x="20" y="164" width="728" height="695"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="695" id="d3c-ri-Dl7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E0-ec-Q2Z">
                                 <rect key="frame" x="20" y="94" width="69" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1113,19 +1123,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qbn-dq-EUb">
-                                <rect key="frame" x="0.0" y="149" width="768" height="502"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="eRn-eP-60I">
-                                        <rect key="frame" x="20" y="20" width="728" height="462"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.9137254901960784" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1134,9 +1131,13 @@
                             <constraint firstItem="BC4-CA-gAI" firstAttribute="centerY" secondItem="hNH-Gb-LXH" secondAttribute="centerY" constant="1.5" id="4Qn-5x-b53"/>
                             <constraint firstItem="hNH-Gb-LXH" firstAttribute="top" secondItem="XGu-Jj-llk" secondAttribute="bottom" constant="25" id="KBZ-4M-ZFg"/>
                             <constraint firstItem="hNH-Gb-LXH" firstAttribute="leading" secondItem="4E0-ec-Q2Z" secondAttribute="trailing" constant="14" id="L2g-a5-c64"/>
+                            <constraint firstItem="01k-0M-apu" firstAttribute="top" secondItem="eRn-eP-60I" secondAttribute="bottom" constant="165" id="PKe-Qm-Fwe"/>
                             <constraint firstAttribute="trailing" secondItem="BC4-CA-gAI" secondAttribute="trailing" constant="20" id="PVX-ax-Arx"/>
                             <constraint firstItem="BC4-CA-gAI" firstAttribute="leading" secondItem="hNH-Gb-LXH" secondAttribute="trailing" constant="-30" id="RVm-GA-TsP"/>
                             <constraint firstItem="4E0-ec-Q2Z" firstAttribute="leading" secondItem="gDb-ut-V6I" secondAttribute="leading" constant="20" id="h4e-6h-mUk"/>
+                            <constraint firstAttribute="trailing" secondItem="eRn-eP-60I" secondAttribute="trailing" constant="20" id="miG-4E-ym4"/>
+                            <constraint firstItem="eRn-eP-60I" firstAttribute="top" secondItem="XGu-Jj-llk" secondAttribute="bottom" constant="100" id="oU0-oJ-yMc"/>
+                            <constraint firstItem="eRn-eP-60I" firstAttribute="leading" secondItem="gDb-ut-V6I" secondAttribute="leading" constant="20" id="r8o-WB-tOa"/>
                             <constraint firstItem="4E0-ec-Q2Z" firstAttribute="top" secondItem="gDb-ut-V6I" secondAttribute="top" constant="94" id="viF-ZE-CCe"/>
                         </constraints>
                     </view>
@@ -1145,7 +1146,6 @@
                     <connections>
                         <outlet property="bodyTextView" destination="eRn-eP-60I" id="ZQb-Wx-g34"/>
                         <outlet property="dateLabel" destination="BC4-CA-gAI" id="WXf-wN-afV"/>
-                        <outlet property="scrollView" destination="Qbn-dq-EUb" id="12l-Bd-dvQ"/>
                         <outlet property="titleLabel" destination="4E0-ec-Q2Z" id="aZs-VV-8nM"/>
                         <outlet property="titleTextField" destination="hNH-Gb-LXH" id="dVG-DY-DGS"/>
                     </connections>

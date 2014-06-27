@@ -36,6 +36,7 @@
     _dateLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
     _dateLabel.textColor = delegate.brandBlack;
     _bodyTextView.delegate = self;
+    [self registerForKeyboardNotifications];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,6 +75,47 @@
 - (void)textViewDidChange:(UITextView *)textView
 {
     self.detailItem.body = textView.text;
+}
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardDidChangeFrameNotification object:nil];
+    
+}
+
+
+-(void)keyboardDidChangeFrame:(NSNotification*)notification
+{
+    NSDictionary *info = [notification userInfo];
+    CGPoint kbOrigin = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].origin;
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    float offset = 0;
+    float timerHeight = 154;
+    float textTopSpace = self.bodyTextView.frame.origin.y;
+    if (self.interfaceOrientation == UIInterfaceOrientationPortrait) {
+        offset = kbOrigin.y - timerHeight - textTopSpace;
+    }
+    else if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
+        offset = kbOrigin.x - timerHeight - textTopSpace;
+    }
+    else if (self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+        offset = screenSize.width - kbOrigin.x - kbSize.width - timerHeight - textTopSpace;
+    }
+    else if (self.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
+        offset = screenSize.height - kbOrigin.y - kbSize.height - timerHeight - textTopSpace;
+    }
+    
+    if (offset < 100)
+        offset = 100;
+    
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         CGRect frameOffset = self.bodyTextView.frame;
+                         frameOffset.size.height = offset;
+                         self.bodyTextView.frame = frameOffset;
+                     }
+     ];
 }
 
 

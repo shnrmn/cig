@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *bodyTextView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic) float textViewY;
 
 @property (strong, nonatomic) Note *detailItem;
 
