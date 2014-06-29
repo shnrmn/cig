@@ -36,6 +36,8 @@
     _dateLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
     _dateLabel.textColor = delegate.brandBlack;
     _bodyTextView.delegate = self;
+    
+    [_bodyTextView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self registerForKeyboardNotifications];
 }
 
