@@ -14,7 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *progress;
 @property (strong, nonatomic) IBOutlet UIStepper *minuteStepper;
 @property (strong, nonatomic) IBOutlet UIStepper *secondStepper;
-@property (strong, nonatomic) AppDelegate *delegate;
 @property (strong, nonatomic) NSTimer *timer;
 @property (nonatomic) int currentMinutes;
 @property (nonatomic) int currentSeconds;

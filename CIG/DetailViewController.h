@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TimerViewController.h"
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface DetailViewController : UIViewController
 
 @property (strong, nonatomic) id detailItem;
 

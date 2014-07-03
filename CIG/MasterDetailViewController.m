@@ -5,6 +5,7 @@
 //  Created by Shawn Norman on 2014-06-13.
 //  Copyright (c) 2014 Shawn Norman. All rights reserved.
 //
+//  With code from scienceathand.com by user "todd' 2011-11-27
 
 #import "MasterDetailViewController.h"
 
@@ -75,7 +76,7 @@ const int minOffset = 284;
         _splitViewController = splitViewController;
         _detailControllers = [detailControllers copy];
         UINavigationController* detailRoot = [splitViewController.viewControllers objectAtIndex:1];
-        _currentDetailController = detailRoot.topViewController;
+        _currentDetailController = (DetailViewController *)detailRoot.topViewController;
         
         splitViewController.delegate = self;
         UITabBarController* tabBar = [splitViewController.viewControllers objectAtIndex:0];
@@ -146,9 +147,10 @@ const int minOffset = 284;
     self.masterBarButtonItem = barButtonItem;
     self.masterPopoverController = pc;
     
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Menu", @"Menu");
     
     [self.currentDetailController.navigationItem setLeftBarButtonItem:self.masterBarButtonItem animated:YES];
+    self.currentDetailController.masterPopoverController = pc;
 }
 
 /* forward the message to the current detail view
@@ -160,13 +162,13 @@ const int minOffset = 284;
     self.masterPopoverController = nil;
     
     [self.currentDetailController.navigationItem setLeftBarButtonItem:nil animated:YES];
-    
+    self.currentDetailController.masterPopoverController = self.masterPopoverController;
 }
 
 // change detail view to reflect the current master controller
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     UINavigationController* detailRootController = [self.detailControllers objectAtIndex:tabBarController.selectedIndex];
-    UIViewController* detailControler = detailRootController.topViewController;
+    DetailViewController* detailControler = (DetailViewController *)detailRootController.topViewController;
     
     if(detailControler != self.currentDetailController)
     {
@@ -180,6 +182,7 @@ const int minOffset = 284;
         // replace the passthrough views with current detail navigationbar
         if([self.masterPopoverController isPopoverVisible]){
             self.masterPopoverController.passthroughViews = [NSArray arrayWithObject:detailRootController.navigationBar];
+            self.currentDetailController.masterPopoverController = self.masterPopoverController;
         }
     }
 }

@@ -28,7 +28,6 @@
 {
     // Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
-    self.detailItem = nil;
 }
 
 - (void)didReceiveMemoryWarning

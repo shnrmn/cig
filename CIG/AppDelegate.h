@@ -18,4 +18,6 @@
 @property (strong, nonatomic) UIColor *brandBlack;
 @property (strong, nonatomic) UIColor *brandWhite;
 
+@property (strong, nonatomic) MasterDetailViewController *masterDetailManager;
+
 @end

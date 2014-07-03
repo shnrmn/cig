@@ -77,14 +77,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Code from lexicontext dictionary API. Modified to check multi-word string.
 - (void)getDefinition
 {
     NSString *toDefine = _suggestionLabel.text;
     NSMutableString *definition = [[NSMutableString alloc] init];
+    // Check if whole suggestion is in dictionary.
     if ([_dictionary containsDefinitionFor:toDefine]) {
         [definition appendString:[_dictionary definitionAsHTMLFor:toDefine withTextColor:@"Black" backgroundColor:@"FloralWhite" definitionBodyFontFamily:@"HelveticaNeue" definitionBodyFontSize:16.0]];
         
     }
+    // Break suggestion into phrases separated by ampersand.
     else {
         NSArray *phrases = [toDefine componentsSeparatedByString:@"&"];
         for (NSString *phrase in phrases)
@@ -93,6 +96,7 @@
                 [definition appendString:[_dictionary definitionAsHTMLFor:phrase withTextColor:@"Black" backgroundColor:@"FloralWhite" definitionBodyFontFamily:@"HelveticaNeue" definitionBodyFontSize:16.0]];
                 [_definitionWebView loadHTMLString:definition baseURL:nil];
             }
+            // Break suggestion into words separated by spaces.
             else {
                 NSArray *words = [phrase componentsSeparatedByString:@" "];
                 for (NSString *word in words)
@@ -109,6 +113,7 @@
     [_definitionWebView loadHTMLString:definition baseURL:nil];
 }
 
+// Get new suggestion after shake.
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     
     if (motion == UIEventSubtypeMotionShake)
@@ -118,27 +123,11 @@
     
 }
 
+// Get new suggestion.
 - (IBAction)refresh:(id)sender
 {
     [self configureView];
 }
-
-#pragma mark - Split view
-
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
-{
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
-}
-
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
-}
-
 
 /*
 #pragma mark - Navigation

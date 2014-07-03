@@ -69,6 +69,7 @@
     return [secInfo numberOfObjects];
 }
 
+// A series of methods dealing with core data requests. From StackOverflow user "Steve" 2013-09-25
 -(void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
 }

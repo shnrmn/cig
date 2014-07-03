@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewController.h"
 
 @protocol SubstitutableDetailViewController <NSObject>
 
@@ -25,7 +26,7 @@
 
 @property (strong, nonatomic) UIBarButtonItem *masterBarButtonItem;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-@property (strong, nonatomic) UIViewController *currentDetailController;
+@property (strong, nonatomic) DetailViewController *currentDetailController;
 @property (strong, nonatomic) UIViewController *timerView;
 
 -(id)initWithSplitViewController:(UISplitViewController*)splitViewController

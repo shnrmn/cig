@@ -35,8 +35,6 @@ static TimerViewController *singleTimerView;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _delegate = [[UIApplication sharedApplication] delegate];
-    
     _minuteStepper.value = initialMinutes;
     _minuteStepper.wraps = YES;
     _minuteStepper.autorepeat = YES;

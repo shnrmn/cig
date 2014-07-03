@@ -28,7 +28,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _delegate = [[UIApplication sharedApplication] delegate];
-    _delegate.masterDetailManager.delegate = self;
     _titleLabel.textColor = _delegate.brandBlack;
     _descriptionLabel.textColor = _delegate.brandBlack;
     _titleLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
@@ -56,6 +55,7 @@
             header.font = [UIFont fontWithName:@"Gotham-XLight" size:20];
             header.textColor = _delegate.brandBlack;
         }
+        // Check if exercise has an variations listed.
         if ([self.detailItem.variations length] == 0) {
             [self.variationsHeader setHidden:YES];
         }
