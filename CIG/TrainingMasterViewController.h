@@ -7,7 +7,12 @@
 //
 
 #import "MasterViewController.h"
+#import "TrainingDetailViewController.h"
+#import "Exercise.h"
+#import "AppDelegate.h"
 
 @interface TrainingMasterViewController : MasterViewController
+
+@property (strong, nonatomic) AppDelegate *delegate;
 
 @end

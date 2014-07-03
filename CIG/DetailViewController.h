@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "TimerViewController.h"
-#import "EmptyViewController.h"
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 

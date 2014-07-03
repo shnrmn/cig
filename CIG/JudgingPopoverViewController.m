@@ -5,6 +5,7 @@
 //  Created by Shawn Norman on 2014-06-25.
 //  Copyright (c) 2014 Shawn Norman. All rights reserved.
 //
+//  Provides information on judging criteria.
 
 #import "JudgingPopoverViewController.h"
 

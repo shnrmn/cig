@@ -2,14 +2,14 @@
 //  DataStore.m
 //  CIG
 //
-//  Created by Shawn Norman on 2014-06-19.
-//  Copyright (c) 2014 Shawn Norman. All rights reserved.
+//  Code from StackOverflow user "Steve" 2013-09-25
 //
 
 #import "DataStore.h"
 
 @implementation DataStore
 
+// Return the data store singleton.
 + (id)sharedStore{
     static DataStore *sharedStore = nil;
     if (!sharedStore) {
@@ -19,6 +19,7 @@
     return sharedStore;
 }
 
+// Get the managed object context.
 + (NSManagedObjectContext*)managedObjectContext{
     static NSManagedObjectContext *context = nil;
     
@@ -66,6 +67,7 @@
     
 }
 
+// Get the documents directory path.
 + (NSString *)documentsDirectoryPath
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

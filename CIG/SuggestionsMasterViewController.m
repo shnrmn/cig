@@ -53,26 +53,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
-                        object:(AskFor *)object {
-    static NSString *cellIdentifier = @"Suggestions Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:cellIdentifier];
-    }
-    
-    cell.textLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:20];
-    cell.textLabel.text = [object objectForKey:@"type"];
-    cell.textLabel.textColor = _delegate.brandBlack;
-    [cell setBackgroundColor:_delegate.brandWhite];
-    cell.textLabel.highlightedTextColor = _delegate.brandBlack;
-    
-    return cell;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Suggestions Cell";

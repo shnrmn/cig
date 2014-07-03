@@ -5,6 +5,7 @@
 //  Created by Shawn Norman on 2014-06-24.
 //  Copyright (c) 2014 Shawn Norman. All rights reserved.
 //
+//  Placeholder for detail views without detail items.
 
 #import "EmptyViewController.h"
 
@@ -25,9 +26,9 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
+    self.detailItem = nil;
 }
 
 - (void)didReceiveMemoryWarning

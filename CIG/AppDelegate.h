@@ -14,7 +14,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) MasterDetailViewController *masterDetailManager;
 @property (strong, nonatomic) UIColor *brandRed;
 @property (strong, nonatomic) UIColor *brandBlack;
 @property (strong, nonatomic) UIColor *brandWhite;

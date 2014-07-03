@@ -2,8 +2,7 @@
 //  DataStore.h
 //  CIG
 //
-//  Created by Shawn Norman on 2014-06-19.
-//  Copyright (c) 2014 Shawn Norman. All rights reserved.
+//  Code from StackOverflow user "Steve" 2013-09-25
 //
 
 #import <Foundation/Foundation.h>

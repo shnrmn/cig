@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
-@interface AskFor: PFObject <PFSubclassing>
+@interface AskFor : PFObject <PFSubclassing>
 
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSArray *contents;

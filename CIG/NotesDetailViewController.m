@@ -41,6 +41,11 @@
     [self registerForKeyboardNotifications];
 }
 
+- (void) viewWillDisappear:(BOOL)animated
+{
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

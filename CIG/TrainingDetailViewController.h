@@ -7,8 +7,23 @@
 //
 
 #import "DetailViewController.h"
-#import "YTPlayerView.h"
+#import "Exercise.h"
+#import "AppDelegate.h"
 
 @interface TrainingDetailViewController : DetailViewController
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *headers;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rulesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *objectivesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commentsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *variationsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *variationsHeader;
+
+@property (strong, nonatomic) Exercise *detailItem;
+@property (strong, nonatomic) AppDelegate *delegate;
+
 
 @end

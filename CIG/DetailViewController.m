@@ -53,7 +53,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
     if (!self.detailItem) {
-        EmptyViewController *emptyView = [self.storyboard instantiateViewControllerWithIdentifier:@"EmptyView"];
+        DetailViewController *emptyView = [self.storyboard instantiateViewControllerWithIdentifier:@"EmptyView"];
         [self.navigationController pushViewController:emptyView animated:YES];
     }
     else {

@@ -27,6 +27,47 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _delegate = [[UIApplication sharedApplication] delegate];
+    _delegate.masterDetailManager.delegate = self;
+    _titleLabel.textColor = _delegate.brandBlack;
+    _descriptionLabel.textColor = _delegate.brandBlack;
+    _titleLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:30];
+    _rulesLabel.textColor = _delegate.brandBlack;
+    _objectivesLabel.textColor = _delegate.brandBlack;
+    _commentsLabel.textColor = _delegate.brandBlack;
+    _variationsLabel.textColor = _delegate.brandBlack;
+    
+    [self.splitViewController.view setNeedsLayout];
+}
+
+- (void)configureView
+{
+    // Update the user interface for the detail item.
+    if (self.detailItem) {
+        [super.navigationController popViewControllerAnimated:YES];
+        self.titleLabel.text = self.detailItem.title;
+        self.descriptionLabel.text = self.detailItem.subtitle;
+        self.rulesLabel.text = self.detailItem.rules;
+        self.objectivesLabel.text = self.detailItem.objectives;
+        self.commentsLabel.text = self.detailItem.comments;
+        self.variationsLabel.text = self.detailItem.variations;
+        for (UILabel *header in self.headers)
+        {
+            header.font = [UIFont fontWithName:@"Gotham-XLight" size:20];
+            header.textColor = _delegate.brandBlack;
+        }
+        if ([self.detailItem.variations length] == 0) {
+            [self.variationsHeader setHidden:YES];
+        }
+        else
+        {
+            [self.variationsHeader setHidden:NO];
+        }
+        
+        if (self.masterPopoverController != nil) {
+            [self.masterPopoverController dismissPopoverAnimated:YES];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

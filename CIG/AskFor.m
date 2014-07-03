@@ -5,6 +5,7 @@
 //  Created by Shawn Norman on 2014-06-24.
 //  Copyright (c) 2014 Shawn Norman. All rights reserved.
 //
+//  Parse object subclass for ask fors.
 
 #import "AskFor.h"
 #import <Parse/PFObject+Subclass.h>

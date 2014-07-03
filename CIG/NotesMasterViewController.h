@@ -8,7 +8,6 @@
 
 #import "MasterViewController.h"
 #import "Note.h"
-#import "NoteDAO.h"
 #import "NotesDetailViewController.h"
 #import "DataStore.h"
 #import "NoteCell.h"

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "DetailViewController.h"
 
-@interface EmptyViewController : UIViewController
+@interface EmptyViewController : DetailViewController
+
+@property (strong, nonatomic) id detailItem;
 
 @end

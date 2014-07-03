@@ -16,8 +16,8 @@
 @property (strong, nonatomic) IBOutlet UIStepper *secondStepper;
 @property (strong, nonatomic) AppDelegate *delegate;
 @property (strong, nonatomic) NSTimer *timer;
-@property (nonatomic) int currMinutes;
-@property (nonatomic) int currSeconds;
+@property (nonatomic) int currentMinutes;
+@property (nonatomic) int currentSeconds;
 
 -(IBAction)start:(id)sender;
 -(IBAction)stop:(id)sender;

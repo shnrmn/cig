@@ -12,10 +12,14 @@
 
 @end
 
+const int timerHeight = 134;
+const int minOffset = 284;
+
 @implementation MasterDetailViewController
 
 -(void)viewDidLoad
 {
+    // Instantiate and add timer view.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
     _timerView = [storyboard instantiateViewControllerWithIdentifier:@"Timer View"];
     _timerView.view.frame = CGRectMake(0, 852, 720, 134);
@@ -23,10 +27,23 @@
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:_timerView.view];
     
-    [self registerForKeyboardNotifications];
     [self updateViewConstraints];
+    
+    [self.view addConstraint:_bottom];
+    [self.view addConstraint:_trailing];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self registerForKeyboardNotifications];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self unregisterForKeyboardNotifications];
+}
+
+// Set up constraints for timer view.
 - (void)updateViewConstraints
 {
     [super updateViewConstraints];
@@ -46,12 +63,10 @@
                                              attribute:NSLayoutAttributeTrailing
                                             multiplier:1.0
                                               constant:30.0];
-    
-    [self.view addConstraint:_bottom];
-    [self.view addConstraint:_trailing];
 
 }
 
+// Set up the tab bar and root detail controller.
 -(id)initWithSplitViewController:(UISplitViewController*)splitViewController withDetailRootControllers:(NSArray*)detailControllers
 {
     
@@ -72,13 +87,21 @@
     return self;
 }
 
-- (void)registerForKeyboardNotifications
+// Register for keyboard notification to move timer view position.
+-(void)registerForKeyboardNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardDidChangeFrameNotification object:nil];
     
 }
 
+// Unregister for keyboard notification.
+-(void)unregisterForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidChangeFrameNotification object:nil];
+}
 
+
+// Check orientation of device and move timer view accordingly.
 -(void)keyboardDidChangeFrame:(NSNotification*)notification
 {
     NSDictionary *info = [notification userInfo];
@@ -87,22 +110,21 @@
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     float offset = 0;
     float timerOffset = 0;
-    float minOffset = 284;
     if (self.interfaceOrientation == UIInterfaceOrientationPortrait) {
         offset = kbOrigin.y;
-        timerOffset = offset - 134;
+        timerOffset = offset - timerHeight;
     }
     else if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
         offset = kbOrigin.x;
-        timerOffset = offset - 134;
+        timerOffset = offset - timerHeight;
     }
     else if (self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
         offset -= kbOrigin.x - screenSize.width + kbSize.width;
-        timerOffset = (offset - 134);
+        timerOffset = (offset - timerHeight);
     }
     else if (self.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
         offset -= kbOrigin.y - screenSize.height + kbSize.height;
-        timerOffset = (offset - 134);
+        timerOffset = (offset - timerHeight);
     }
     
     if (timerOffset < minOffset) {

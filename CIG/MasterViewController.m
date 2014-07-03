@@ -36,7 +36,17 @@
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
     
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    UINavigationController *navController = (UINavigationController *)[self.splitViewController.viewControllers lastObject];
+    NSArray *detailControllers = navController.viewControllers;
+    // Check to see if EmptyView is on stack, if so get view controller below.
+    if (detailControllers.count > 1)
+    {
+        self.detailViewController = detailControllers[detailControllers.count - 2];
+    }
+    else
+    {
+    self.detailViewController = (DetailViewController *)[navController topViewController];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,6 +134,5 @@
         [[segue destinationViewController] setDetailItem:object];
     }
 }
-
 
 @end

@@ -10,6 +10,8 @@
 		0030D56B195A74F4003427CA /* EmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0030D56A195A74F4003427CA /* EmptyViewController.m */; };
 		0030D56E195A9C67003427CA /* ExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0030D56D195A9C67003427CA /* ExerciseCell.m */; };
 		0030D571195AC27F003427CA /* JudgingPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0030D570195AC27F003427CA /* JudgingPopoverViewController.m */; };
+		005A394F195FB0F500661278 /* TrainingCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A394E195FB0F500661278 /* TrainingCategory.m */; };
+		005A39521960E06300661278 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A39511960E06300661278 /* Exercise.m */; };
 		006958841947EA4A00BE50CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006958831947EA4A00BE50CB /* Foundation.framework */; };
 		006958861947EA4A00BE50CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006958851947EA4A00BE50CB /* CoreGraphics.framework */; };
 		006958881947EA4A00BE50CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006958871947EA4A00BE50CB /* UIKit.framework */; };
@@ -48,7 +50,6 @@
 		0099427D194BED8600AC1579 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0099427C194BED8600AC1579 /* Main_iPad.storyboard */; };
 		00994284194D187B00AC1579 /* Franchise-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00994282194D187B00AC1579 /* Franchise-Bold.ttf */; };
 		00994285194D187B00AC1579 /* Gotham-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00994283194D187B00AC1579 /* Gotham-XLight.otf */; };
-		00994289194D249B00AC1579 /* NoteDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 00994288194D249B00AC1579 /* NoteDAO.m */; };
 		0099428E194EC19A00AC1579 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0099428D194EC19A00AC1579 /* YTPlayerView.m */; };
 		00994291194ECDDF00AC1579 /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = 00994290194ECDDF00AC1579 /* YTPlayerView-iframe-player.html */; };
 		0099429819513AA000AC1579 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0099429719513AA000AC1579 /* NoteCell.m */; };
@@ -79,6 +80,10 @@
 		0030D56D195A9C67003427CA /* ExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseCell.m; sourceTree = "<group>"; };
 		0030D56F195AC27F003427CA /* JudgingPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JudgingPopoverViewController.h; sourceTree = "<group>"; };
 		0030D570195AC27F003427CA /* JudgingPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JudgingPopoverViewController.m; sourceTree = "<group>"; };
+		005A394D195FB0F500661278 /* TrainingCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingCategory.h; sourceTree = "<group>"; };
+		005A394E195FB0F500661278 /* TrainingCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingCategory.m; sourceTree = "<group>"; };
+		005A39501960E06300661278 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
+		005A39511960E06300661278 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
 		006958801947EA4A00BE50CB /* CIG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006958831947EA4A00BE50CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		006958851947EA4A00BE50CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,8 +138,6 @@
 		0099427C194BED8600AC1579 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		00994282194D187B00AC1579 /* Franchise-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Franchise-Bold.ttf"; sourceTree = "<group>"; };
 		00994283194D187B00AC1579 /* Gotham-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLight.otf"; sourceTree = "<group>"; };
-		00994287194D249B00AC1579 /* NoteDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteDAO.h; sourceTree = "<group>"; };
-		00994288194D249B00AC1579 /* NoteDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDAO.m; sourceTree = "<group>"; };
 		0099428C194EC19A00AC1579 /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
 		0099428D194EC19A00AC1579 /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
 		00994290194ECDDF00AC1579 /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
@@ -237,12 +240,10 @@
 			isa = PBXGroup;
 			children = (
 				006958921947EA4A00BE50CB /* AppDelegate.h */,
-				0030D569195A74F4003427CA /* EmptyViewController.h */,
 				0030D56F195AC27F003427CA /* JudgingPopoverViewController.h */,
 				00994279194BBC9500AC1579 /* MasterDetailViewController.h */,
 				00994276194ACA5C00AC1579 /* TimerViewController.h */,
 				006958931947EA4A00BE50CB /* AppDelegate.m */,
-				0030D56A195A74F4003427CA /* EmptyViewController.m */,
 				0030D570195AC27F003427CA /* JudgingPopoverViewController.m */,
 				0099427A194BBC9600AC1579 /* MasterDetailViewController.m */,
 				00994277194ACA5C00AC1579 /* TimerViewController.m */,
@@ -313,14 +314,16 @@
 			children = (
 				0069589E1947EA4A00BE50CB /* DetailViewController.h */,
 				0069589F1947EA4A00BE50CB /* DetailViewController.m */,
-				006958CF194A79D000BE50CB /* TrainingDetailViewController.h */,
-				006958D0194A79D000BE50CB /* TrainingDetailViewController.m */,
-				006958D2194A79E100BE50CB /* SuggestionsDetailViewController.h */,
-				006958D3194A79E100BE50CB /* SuggestionsDetailViewController.m */,
+				0030D569195A74F4003427CA /* EmptyViewController.h */,
+				0030D56A195A74F4003427CA /* EmptyViewController.m */,
 				006958D5194A79F000BE50CB /* JudgingDetailViewController.h */,
 				006958D6194A79F000BE50CB /* JudgingDetailViewController.m */,
 				006958D8194A79FF00BE50CB /* NotesDetailViewController.h */,
 				006958D9194A79FF00BE50CB /* NotesDetailViewController.m */,
+				006958D2194A79E100BE50CB /* SuggestionsDetailViewController.h */,
+				006958D3194A79E100BE50CB /* SuggestionsDetailViewController.m */,
+				006958CF194A79D000BE50CB /* TrainingDetailViewController.h */,
+				006958D0194A79D000BE50CB /* TrainingDetailViewController.m */,
 			);
 			name = DetailViewControllers;
 			sourceTree = "<group>";
@@ -331,11 +334,14 @@
 				009942A31952BF6C00AC1579 /* Note.h */,
 				009942A41952BF6C00AC1579 /* Note.m */,
 				0099429C19515AE100AC1579 /* Third Party Libraries */,
-				00994286194D248100AC1579 /* DAO */,
 				009942A61954028100AC1579 /* DataStore.h */,
 				009942A71954028100AC1579 /* DataStore.m */,
 				009942AF1959772E00AC1579 /* AskFor.h */,
 				009942B01959772E00AC1579 /* AskFor.m */,
+				005A394D195FB0F500661278 /* TrainingCategory.h */,
+				005A394E195FB0F500661278 /* TrainingCategory.m */,
+				005A39501960E06300661278 /* Exercise.h */,
+				005A39511960E06300661278 /* Exercise.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -347,15 +353,6 @@
 				00994283194D187B00AC1579 /* Gotham-XLight.otf */,
 			);
 			name = Fonts;
-			sourceTree = "<group>";
-		};
-		00994286194D248100AC1579 /* DAO */ = {
-			isa = PBXGroup;
-			children = (
-				00994287194D249B00AC1579 /* NoteDAO.h */,
-				00994288194D249B00AC1579 /* NoteDAO.m */,
-			);
-			name = DAO;
 			sourceTree = "<group>";
 		};
 		0099428F194ECDDF00AC1579 /* Assets */ = {
@@ -493,6 +490,7 @@
 			files = (
 				006958C3194A777000BE50CB /* SuggestionsMasterViewController.m in Sources */,
 				0030D56E195A9C67003427CA /* ExerciseCell.m in Sources */,
+				005A394F195FB0F500661278 /* TrainingCategory.m in Sources */,
 				006958941947EA4A00BE50CB /* AppDelegate.m in Sources */,
 				009942A219527F6200AC1579 /* CIG.xcdatamodeld in Sources */,
 				0099428E194EC19A00AC1579 /* YTPlayerView.m in Sources */,
@@ -507,6 +505,7 @@
 				009942A51952BF6D00AC1579 /* Note.m in Sources */,
 				006958CE194A798A00BE50CB /* MasterViewController.m in Sources */,
 				006958C6194A778400BE50CB /* JudgingMasterViewController.m in Sources */,
+				005A39521960E06300661278 /* Exercise.m in Sources */,
 				0030D56B195A74F4003427CA /* EmptyViewController.m in Sources */,
 				009942A81954028100AC1579 /* DataStore.m in Sources */,
 				006958D4194A79E100BE50CB /* SuggestionsDetailViewController.m in Sources */,
@@ -514,7 +513,6 @@
 				0099429819513AA000AC1579 /* NoteCell.m in Sources */,
 				0099427B194BBC9600AC1579 /* MasterDetailViewController.m in Sources */,
 				006958901947EA4A00BE50CB /* main.m in Sources */,
-				00994289194D249B00AC1579 /* NoteDAO.m in Sources */,
 				006958A01947EA4A00BE50CB /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

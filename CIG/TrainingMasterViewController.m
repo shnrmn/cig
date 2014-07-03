@@ -27,12 +27,60 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _delegate = [[UIApplication sharedApplication] delegate];
+    
+    self.tableView.backgroundColor = _delegate.brandWhite;
+    UIView *footerView = [[UIView alloc] init];
+    footerView.backgroundColor = [UIColor clearColor];
+    self.tableView.tableFooterView = footerView;
+    PFQuery *query = [PFQuery queryWithClassName:@"Exercise"];
+    [query orderByAscending:@"title"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *exercises, NSError *error) {
+        if (!error) {
+            super.objects = [exercises mutableCopy];
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"%@", error);
+        }
+    }];
+
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *cellIdentifier = @"Training Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:cellIdentifier];
+    }
+    
+    Exercise *object = super.objects[indexPath.row];
+    cell.textLabel.font = [UIFont fontWithName:@"Gotham-XLight" size:20];
+    cell.textLabel.text = object.title;
+    cell.textLabel.textColor = _delegate.brandBlack;
+    [cell setBackgroundColor:_delegate.brandWhite];
+    cell.textLabel.highlightedTextColor = _delegate.brandBlack;
+    
+    return cell;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        Exercise *object = super.objects[indexPath.row];
+        TrainingDetailViewController *detailView = (TrainingDetailViewController *)self.detailViewController;
+        [detailView setDetailItem:object];
+    }
 }
 
 /*

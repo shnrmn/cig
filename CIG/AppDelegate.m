@@ -8,12 +8,15 @@
 
 #import "AppDelegate.h"
 #import "AskFor.h"
+#import "Exercise.h"
+#import "TrainingCategory.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // Set up the brand colors.
     _brandRed = [UIColor colorWithRed:239.0/255.0 green:65.0/255.0 blue:53.0/255.0 alpha:1.0];
     _brandBlack = [UIColor colorWithRed:38.0/255.0 green:35.0/255.0 blue:36.0/255.0 alpha:1.0];
     _brandWhite = [UIColor colorWithRed:239.0/255.0 green:233.0/255.0 blue:229.0/255.0 alpha:1.0];
@@ -24,12 +27,16 @@
     // Navigation bar buttons appearance
     [[UIBarButtonItem appearance] setTintColor:_brandWhite];
     
+    // Set up the parse API and register subclasses.
     [AskFor registerSubclass];
+    [TrainingCategory registerSubclass];
+    [Exercise registerSubclass];
     [Parse setApplicationId:@"XTZO0ccMXVwnoXHjwYu97Sa2VadIGwcYYAU41ivF"
     clientKey:@"uoYx4URUucwRHo3sjmGsb2KzkguCvVhlHfDkZ7zs"];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    // Instantiate detail controllers from storyboard.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
     
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;

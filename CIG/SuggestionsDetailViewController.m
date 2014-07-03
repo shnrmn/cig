@@ -33,7 +33,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self becomeFirstResponder];
     _dictionary = [Lexicontext sharedDictionary];
     _delegate = [[UIApplication sharedApplication] delegate];
     _delegate.masterDetailManager.delegate = self;
@@ -45,11 +44,21 @@
     [self getDefinition];
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [self becomeFirstResponder];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [self resignFirstResponder];
+}
+
 - (void)configureView
 {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        [self.navigationController popViewControllerAnimated:YES];
+        [super.navigationController popViewControllerAnimated:YES];
         self.askForLabel.text = self.detailItem.type;
         if ([self.detailItem.type isEqual: @"Any Word"]) {
             _dictionary = [Lexicontext sharedDictionary];
@@ -113,6 +122,23 @@
 {
     [self configureView];
 }
+
+#pragma mark - Split view
+
+- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
+{
+    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+    self.masterPopoverController = popoverController;
+}
+
+- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    // Called when the view is shown again in the split view, invalidating the button and popover controller.
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    self.masterPopoverController = nil;
+}
+
 
 /*
 #pragma mark - Navigation
