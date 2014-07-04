@@ -12,6 +12,7 @@
 		0030D571195AC27F003427CA /* JudgingPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0030D570195AC27F003427CA /* JudgingPopoverViewController.m */; };
 		005A394F195FB0F500661278 /* TrainingCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A394E195FB0F500661278 /* TrainingCategory.m */; };
 		005A39521960E06300661278 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A39511960E06300661278 /* Exercise.m */; };
+		005A399B1966752C00661278 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005A399A1966752C00661278 /* Main_iPad.storyboard */; };
 		006958841947EA4A00BE50CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006958831947EA4A00BE50CB /* Foundation.framework */; };
 		006958861947EA4A00BE50CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006958851947EA4A00BE50CB /* CoreGraphics.framework */; };
 		006958881947EA4A00BE50CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006958871947EA4A00BE50CB /* UIKit.framework */; };
@@ -47,7 +48,6 @@
 		00994275194AA62C00AC1579 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00994274194AA62C00AC1579 /* SystemConfiguration.framework */; };
 		00994278194ACA5C00AC1579 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00994277194ACA5C00AC1579 /* TimerViewController.m */; };
 		0099427B194BBC9600AC1579 /* MasterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0099427A194BBC9600AC1579 /* MasterDetailViewController.m */; };
-		0099427D194BED8600AC1579 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0099427C194BED8600AC1579 /* Main_iPad.storyboard */; };
 		00994284194D187B00AC1579 /* Franchise-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00994282194D187B00AC1579 /* Franchise-Bold.ttf */; };
 		00994285194D187B00AC1579 /* Gotham-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00994283194D187B00AC1579 /* Gotham-XLight.otf */; };
 		0099428E194EC19A00AC1579 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0099428D194EC19A00AC1579 /* YTPlayerView.m */; };
@@ -84,6 +84,7 @@
 		005A394E195FB0F500661278 /* TrainingCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingCategory.m; sourceTree = "<group>"; };
 		005A39501960E06300661278 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
 		005A39511960E06300661278 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
+		005A399A1966752C00661278 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		006958801947EA4A00BE50CB /* CIG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006958831947EA4A00BE50CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		006958851947EA4A00BE50CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,7 +136,6 @@
 		00994277194ACA5C00AC1579 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		00994279194BBC9500AC1579 /* MasterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterDetailViewController.h; sourceTree = "<group>"; };
 		0099427A194BBC9600AC1579 /* MasterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterDetailViewController.m; sourceTree = "<group>"; };
-		0099427C194BED8600AC1579 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		00994282194D187B00AC1579 /* Franchise-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Franchise-Bold.ttf"; sourceTree = "<group>"; };
 		00994283194D187B00AC1579 /* Gotham-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLight.otf"; sourceTree = "<group>"; };
 		0099428C194EC19A00AC1579 /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 				0030D570195AC27F003427CA /* JudgingPopoverViewController.m */,
 				0099427A194BBC9600AC1579 /* MasterDetailViewController.m */,
 				00994277194ACA5C00AC1579 /* TimerViewController.m */,
-				0099427C194BED8600AC1579 /* Main_iPad.storyboard */,
+				005A399A1966752C00661278 /* Main_iPad.storyboard */,
 				006958A11947EA4A00BE50CB /* Images.xcassets */,
 				009942A019527F6200AC1579 /* CIG.xcdatamodeld */,
 				00994259194A8FDE00AC1579 /* Data */,
@@ -463,11 +463,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				00994285194D187B00AC1579 /* Gotham-XLight.otf in Resources */,
-				0099427D194BED8600AC1579 /* Main_iPad.storyboard in Resources */,
 				009942AC1959524A00AC1579 /* LexicontextAssets.bundle in Resources */,
 				00994291194ECDDF00AC1579 /* YTPlayerView-iframe-player.html in Resources */,
 				006958A21947EA4A00BE50CB /* Images.xcassets in Resources */,
 				006958971947EA4A00BE50CB /* Main_iPhone.storyboard in Resources */,
+				005A399B1966752C00661278 /* Main_iPad.storyboard in Resources */,
 				0069588E1947EA4A00BE50CB /* InfoPlist.strings in Resources */,
 				00994284194D187B00AC1579 /* Franchise-Bold.ttf in Resources */,
 			);

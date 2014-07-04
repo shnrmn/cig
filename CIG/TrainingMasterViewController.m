@@ -39,12 +39,15 @@
         if (!error) {
             super.objects = [exercises mutableCopy];
             [self.tableView reloadData];
+            NSInteger random = arc4random_uniform((int)super.objects.count);
+            NSObject *randomObject = super.objects[random];
+            [self.detailViewController setDetailItem:randomObject];
         }
         else {
             NSLog(@"%@", error);
         }
     }];
-
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

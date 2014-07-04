@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -35,8 +36,6 @@
     _objectivesLabel.textColor = _delegate.brandBlack;
     _commentsLabel.textColor = _delegate.brandBlack;
     _variationsLabel.textColor = _delegate.brandBlack;
-    
-    [self.splitViewController.view setNeedsLayout];
 }
 
 - (void)configureView

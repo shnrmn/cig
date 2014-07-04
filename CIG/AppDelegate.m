@@ -48,7 +48,6 @@
     
     self.masterDetailManager = [[MasterDetailViewController alloc] initWithSplitViewController:splitViewController
                                                                         withDetailRootControllers:[NSArray arrayWithObjects:detail1,detail2,detail3,detail4,nil]];
-    
     return YES;
 }
 

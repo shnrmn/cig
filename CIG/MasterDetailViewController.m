@@ -20,6 +20,7 @@ const int minOffset = 284;
 
 -(void)viewDidLoad
 {
+    [super viewDidLoad];
     // Instantiate and add timer view.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
     _timerView = [storyboard instantiateViewControllerWithIdentifier:@"Timer View"];
@@ -70,21 +71,17 @@ const int minOffset = 284;
 // Set up the tab bar and root detail controller.
 -(id)initWithSplitViewController:(UISplitViewController*)splitViewController withDetailRootControllers:(NSArray*)detailControllers
 {
-    
     self = [super init];
     if(self){
         _splitViewController = splitViewController;
+        splitViewController.delegate = self;
         _detailControllers = [detailControllers copy];
         UINavigationController* detailRoot = [splitViewController.viewControllers objectAtIndex:1];
         _currentDetailController = (DetailViewController *)detailRoot.topViewController;
         
-        splitViewController.delegate = self;
         UITabBarController* tabBar = [splitViewController.viewControllers objectAtIndex:0];
         tabBar.delegate = self;
-        
     }
-
-    
     return self;
 }
 
@@ -185,6 +182,7 @@ const int minOffset = 284;
             self.currentDetailController.masterPopoverController = self.masterPopoverController;
         }
     }
+    [self.currentDetailController.navigationItem setLeftBarButtonItem:self.masterBarButtonItem animated:YES];
 }
 
 /*

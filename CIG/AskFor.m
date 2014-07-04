@@ -21,7 +21,7 @@
 
 -(NSString *)randomSuggestion
 {
-    int random1 = rand() % self.contents.count;
+    int random1 = arc4random_uniform((int)self.contents.count);
     return self.contents[random1];
 }
 

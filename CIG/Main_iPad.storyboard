@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="fco-Tu-Nr4">
-                                <rect key="frame" x="58" y="352" width="651" height="321"/>
+                                <rect key="frame" x="59" y="352" width="651" height="321"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="321" id="9NU-Dz-Ova"/>
@@ -99,10 +99,11 @@
                             <constraint firstAttribute="centerY" secondItem="fco-Tu-Nr4" secondAttribute="centerY" id="vFy-AO-nTN"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="pHD-Og-zAh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JvK-oH-olf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="-974"/>
+            <point key="canvasLocation" x="126" y="-942"/>
         </scene>
         <!--Navigation Controller - Training-->
         <scene sceneID="pY4-Hu-kfo">
@@ -403,9 +404,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="SUGGESTIONS" id="LE0-Ze-8O9"/>
-                    <connections>
-                        <segue destination="zDG-BJ-1Ex" kind="replace" identifier="ShowSuggestionDetail" splitViewControllerTargetIndex="1" id="n6Q-1f-qGr"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j9J-dp-ZI2" sceneMemberID="firstResponder"/>
             </objects>
@@ -420,11 +418,11 @@
                         <viewControllerLayoutGuide type="bottom" id="754-c3-jwr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MuC-Tv-ZZv">
-                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8t-ul-jIx">
-                                <rect key="frame" x="57" y="157" width="590" height="453"/>
+                                <rect key="frame" x="89" y="285" width="590" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -433,13 +431,13 @@
                                 </constraints>
                             </webView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask For:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="APG-vn-p9j">
-                                <rect key="frame" x="57" y="113" width="172" height="36"/>
+                                <rect key="frame" x="89" y="241" width="172" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggestion" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Rln-AK-6b2">
-                                <rect key="frame" x="237" y="113" width="358" height="36"/>
+                                <rect key="frame" x="269" y="241" width="358" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="358" id="308-eC-nOY"/>
@@ -448,7 +446,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoV-1d-zrr">
-                                <rect key="frame" x="603" y="105" width="44" height="44"/>
+                                <rect key="frame" x="635" y="233" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Qyi-JF-q0s"/>
@@ -472,7 +470,6 @@
                             <constraint firstItem="APG-vn-p9j" firstAttribute="leading" secondItem="w8t-ul-jIx" secondAttribute="leading" id="vvM-zG-lRb"/>
                             <constraint firstItem="w8t-ul-jIx" firstAttribute="top" secondItem="APG-vn-p9j" secondAttribute="bottom" constant="8" id="wB9-mR-sIj"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="SUGGESTIONS" id="jrs-XQ-lbf"/>
@@ -485,7 +482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JrR-YC-xK8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-694" y="1378"/>
+            <point key="canvasLocation" x="-840" y="1250"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yX9-pY-Ges">
@@ -500,7 +497,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TC0-ob-Zbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1726" y="1301"/>
+            <point key="canvasLocation" x="-1702" y="1250"/>
         </scene>
         <!--Navigation Controller - Judging-->
         <scene sceneID="oZ1-aX-mYg">

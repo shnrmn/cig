@@ -55,11 +55,12 @@
     // Push empty view when there is no detail item.
     if (!self.detailItem) {
         DetailViewController *emptyView = [self.storyboard instantiateViewControllerWithIdentifier:@"EmptyView"];
+        [emptyView.navigationItem setLeftBarButtonItem:self.navigationItem.leftBarButtonItem];
         [self.navigationController pushViewController:emptyView animated:YES];
     }
     else {
         [self configureView];
-    }
+    }    
 }
 
 - (void)didReceiveMemoryWarning
