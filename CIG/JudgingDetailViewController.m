@@ -86,27 +86,58 @@
 }
 
 - (IBAction)listeningInfo:(UIButton *)sender {
+    [self showPopover:@"Listening info." withTitle:@"LISTENING" withSender:sender];
 }
 
 - (IBAction)commitmentInfo:(UIButton *)sender {
+    [self showPopover:@"Commitment info." withTitle:@"COMMITMENT" withSender:sender];
 }
 
 - (IBAction)stakesInfo:(UIButton *)sender {
+    [self showPopover:@"Stakes info." withTitle:@"STAKES" withSender:sender];
 }
 
 - (IBAction)stagingInfo:(UIButton *)sender {
+    [self showPopover:@"Staging info." withTitle:@"STAGING" withSender:sender];
 }
 
 - (IBAction)skillInfo:(UIButton *)sender {
+    if ([self.detailItem isEqualToString:(@"Story")])
+    {
+        [self showPopover:@"Does the team effectively use narration to tell an orginial story with a beginning, middle and end? Do they transition smoothly through the elements of the story? Is there a clear platform used throughout the scene? Is there an organic ending?" withTitle:@"STORY" withSender:sender];
+    }
+    else if ([self.detailItem isEqualToString:(@"Character")])
+    {
+        [self showPopover:@"Does the team present and orginal character through speech, physicality and action? Do they explore different aspects of that character while keeping consistent? Does that character have motivations consistent with the story and the ability to be altered?" withTitle:@"CHARACTER" withSender:sender];
+    }
+    else if ([self.detailItem isEqualToString:(@"Style")])
+    {
+        [self showPopover:@"Does the team explore recognizable elements of a genre, capturing archetypal characters, physicality and/or mood or atmosphere? Does the team use an effective format to portray these elements? Does the team present a reasonable recreation of the style while allowing the content to be variable?" withTitle:@"STYLE" withSender:sender];
+    }
+    else if ([self.detailItem isEqualToString:(@"Theme")])
+    {
+        [self showPopover:@"Does the team explore and expand upon different aspects of the theme from a variety of perspectives? Do they present these explorations in a variety of ways? Does the team use natural transitions and explore the team's unique perspective on the theme?" withTitle:@"THEME" withSender:sender];
+    }
+    else if ([self.detailItem isEqualToString:(@"Life")])
+    {
+        [self showPopover:@"Does the team perform a sincere and honest exploration of a moment or moments in life? Does the team employ an appropriate amount of creative energy? Does the team find a balance between sad/intense moments and humour?" withTitle:@"LIFE" withSender:sender];
+    }
+    else if ([self.detailItem isEqualToString:(@"Open")])
+    {
+        [self showPopover:@"Does the team perform a scene using the five elements of the basic story structure? Is there a clear setting? Characters? Problem or conflict? Stakes? Solution? Does the team perform the scene without any added games or structure?" withTitle:@"OPEN" withSender:sender];
+    }
 }
 
 - (IBAction)suggestionInfo:(UIButton *)sender {
+    [self showPopover:@"Suggestion info." withTitle:@"USE OF SUGGESTION" withSender:sender];
 }
 
 - (IBAction)interestInfo:(UIButton *)sender {
+    [self showPopover:@"Interest info." withTitle:@"INTEREST" withSender:sender];
 }
 
 - (IBAction)riskInfo:(UIButton *)sender {
+    [self showPopover:@"Risk info." withTitle:@"RISK" withSender:sender];
 }
 
 // Display a popover with criteria information.

@@ -9,13 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "DetailViewController.h"
 
-@protocol SubstitutableDetailViewController <NSObject>
-
-- (void)showRootPopoverButtonItem:(UIBarButtonItem *)barButtonItem;
-- (void)invalidateRootPopoverButtonItem:(UIBarButtonItem *)barButtonItem;
-
-@end
-
 @interface MasterDetailViewController : UISplitViewController <UISplitViewControllerDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UISplitViewController *splitViewController;

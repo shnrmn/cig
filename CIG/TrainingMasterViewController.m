@@ -39,6 +39,8 @@
         if (!error) {
             super.objects = [exercises mutableCopy];
             [self.tableView reloadData];
+            
+            // Select random exercise
             NSInteger random = arc4random_uniform((int)super.objects.count);
             NSObject *randomObject = super.objects[random];
             [self.detailViewController setDetailItem:randomObject];

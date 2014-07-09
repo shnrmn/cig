@@ -446,11 +446,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoV-1d-zrr">
-                                <rect key="frame" x="635" y="233" width="44" height="44"/>
+                                <rect key="frame" x="641" y="241" width="38" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="Qyi-JF-q0s"/>
-                                    <constraint firstAttribute="height" constant="44" id="nek-ab-2YG"/>
+                                    <constraint firstAttribute="width" constant="38" id="Qyi-JF-q0s"/>
+                                    <constraint firstAttribute="height" constant="36" id="nek-ab-2YG"/>
                                 </constraints>
                                 <state key="normal" image="reload"/>
                                 <connections>
@@ -460,7 +460,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.91372549020000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="WoV-1d-zrr" firstAttribute="leading" secondItem="Rln-AK-6b2" secondAttribute="trailing" constant="8" id="7Vv-4F-ACy"/>
+                            <constraint firstItem="WoV-1d-zrr" firstAttribute="leading" secondItem="Rln-AK-6b2" secondAttribute="trailing" constant="14" id="7Vv-4F-ACy"/>
                             <constraint firstItem="w8t-ul-jIx" firstAttribute="top" secondItem="WoV-1d-zrr" secondAttribute="bottom" constant="8" id="9T9-7e-eHB"/>
                             <constraint firstAttribute="centerY" secondItem="w8t-ul-jIx" secondAttribute="centerY" id="E9K-Kd-BpG"/>
                             <constraint firstItem="w8t-ul-jIx" firstAttribute="trailing" secondItem="WoV-1d-zrr" secondAttribute="trailing" id="KIx-B3-Omm"/>
@@ -1255,10 +1255,10 @@
     </scenes>
     <resources>
         <image name="logo" width="2000" height="992"/>
-        <image name="reload" width="677" height="629"/>
-        <image name="reset" width="768" height="768"/>
-        <image name="start" width="768" height="768"/>
-        <image name="stop" width="768" height="768"/>
+        <image name="reload" width="130" height="120"/>
+        <image name="reset" width="120" height="120"/>
+        <image name="start" width="120" height="120"/>
+        <image name="stop" width="120" height="120"/>
     </resources>
     <color key="tintColor" red="0.93725490199999995" green="0.25490196079999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

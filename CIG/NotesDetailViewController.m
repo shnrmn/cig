@@ -70,12 +70,24 @@ const int minOffset = 100;
     _bodyTextView.delegate = self;
     
     [_bodyTextView setTranslatesAutoresizingMaskIntoConstraints:NO];
+}
+
+- (BOOL)canBecomeFirstResponder {
+    
+    return YES;
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
     [self registerForKeyboardNotifications];
+    [self becomeFirstResponder];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
 {
     [self unregisterForKeyboardNotifications];
+    [self resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,7 +139,7 @@ const int minOffset = 100;
 
 -(void)unregisterForKeyboardNotifications
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidChangeFrameNotification object:nil];
 }
 
 // Move the text view when the keyboard changes frame.

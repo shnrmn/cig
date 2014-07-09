@@ -54,7 +54,7 @@
             header.font = [UIFont fontWithName:@"Gotham-XLight" size:20];
             header.textColor = _delegate.brandBlack;
         }
-        // Check if exercise has an variations listed.
+        // Check if exercise has any variations listed.
         if ([self.detailItem.variations length] == 0) {
             [self.variationsHeader setHidden:YES];
         }
